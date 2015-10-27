@@ -22,13 +22,14 @@ app.post('/api/webhook', function (req, res) {
 
     var chatid = msg['result'][0]['message']['chat']['id'];
 */
-    var msg = req.body;
+    var msg = req.body.message;
 
-    console.log(msg['result'][0]['message']['chat']['id']);
+    console.log(msg['chat']['id']);
 
     var data = {}
     data.chat_id = 28837686;
-    data.text = 'hi ;)';
+    var chat_idx = msg['chat']['id'];
+    data.text = 'hi ;) ' + chat_idx;
 
     //request.post(botURL + '/sendMessage', {form: data});
 
