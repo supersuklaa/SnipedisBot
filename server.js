@@ -1,6 +1,12 @@
-var express = require('express');
-var request = require('request');
+var express    = require('express');
+var bodyParser = require('body-parser');
+var request    = require('request');
+
 var app = express();
+
+// # Express middleware
+app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); // parse json
 
 var port = process.env.PORT || 8080;
 
@@ -18,7 +24,7 @@ app.post('/api/webhook', function (req, res) {
 
     var chatid = msg['result'][0]['message']['chat']['id'];
 */
-    console.log(req.body.result);
+    console.log(req.body.message);
 
     var data = {}
     data.chat_id = 28837686;
