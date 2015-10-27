@@ -18,7 +18,7 @@ app.post('/api/webhook', function (req, res) {
 
     var chatid = msg['result'][0]['message']['chat']['id'];
 */
-    console.log(JSON.parse(req.body));
+    console.log(req.body.result);
 
     var data = {}
     data.chat_id = 28837686;
