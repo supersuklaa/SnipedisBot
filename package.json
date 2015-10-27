@@ -1,0 +1,11 @@
+{
+  "name"         : "SnipedisBot",
+  "version"      : "0.1.0",
+  "description"  : "tg bot",
+  "main"         : "server.js",
+  "author"       : "zifi",
+  "dependencies" : {
+    "express"        : "~4.7.2",
+    "body-parser"    : "~1.5.2"
+    }
+}
