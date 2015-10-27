@@ -9,14 +9,14 @@ var botURL = "https://api.telegram.org/bot" + botToken;
 
 app.post('/api/webhook', function (req, res) {
 
-  var msg = req.body;
-  var chatid = msg['result'][0]['message']['chat']['id'];
+  var msg = req.body.result;
+  var chatid = msg[0]['message']['chat']['id'];
 
   var data = {}
   data.chat_id = chatid;
   data.text = 'hi :)';
 
-  request.post(botURL + '/sendMessage', {form: data})
+  request.post(botURL + '/sendMessage', {form: data});
 });
 
 app.listen(port);
