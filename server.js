@@ -8,12 +8,15 @@ var botToken = "171954933:AAExHESfOfNnGLkjWUTuZvTiutgi7gOcTO4";
 var botURL = "https://api.telegram.org/bot" + botToken;
 
 app.get('/api/webhook', function (req, res) {
-  request(botURL + '/getupdates', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      var data = JSON.parse(body);
-      res.send(data['result'][0]['message']['text']);
-    }
-  })
+
+  var msg = req.body;
+  var chatid = msg['result'][0]['message']['chat']['id'];
+
+  var data = {}
+  data.chat_id = chatid;
+  data.text = 'hi :)';
+
+  request.post(botURL + '/sendMessage', {form: data})
 });
 
 app.listen(port);
