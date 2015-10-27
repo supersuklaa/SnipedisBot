@@ -7,7 +7,7 @@ var port = process.env.PORT || 8080;
 var botToken = "171954933:AAExHESfOfNnGLkjWUTuZvTiutgi7gOcTO4";
 var botURL = "https://api.telegram.org/bot" + botToken;
 
-app.get('/api/webhook', function (req, res) {
+app.post('/api/webhook', function (req, res) {
 
   var msg = req.body;
   var chatid = msg['result'][0]['message']['chat']['id'];
