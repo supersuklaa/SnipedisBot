@@ -24,13 +24,14 @@ app.post('/api/webhook', function (req, res) {
   console.log(JSON.stringify(msg));
   console.log(botToken);
 
-  request.post(botURL + '/sendMessage', {form: data}
-    , function (error, response, body) {
+  request.post(botURL + '/sendMessage', {form: data},
+    function (error, response, body) {
       if (!error) {
         console.log(JSON.stringify(msg))
-        res.sendStatus(200);
       }
     });
+
+  res.sendStatus(200)
 });
 
 app.listen(port);
