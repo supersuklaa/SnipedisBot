@@ -23,7 +23,10 @@ app.post('/api/webhook', function (req, res) {
 
   request.post(botURL + '/sendMessage', {form: data},
     function (error, response, body) {
-      if (!error) res.sendStatus(200);
+      if (!error) {
+        console.log(JSON.stringify(msg))
+        res.sendStatus(200);
+      }
     });
 });
 
