@@ -21,8 +21,10 @@ app.post('/api/webhook', function (req, res) {
   data.chat_id = msg['chat']['id'];
   data.text = 'hi ;) ' + JSON.stringify(msg);
 
-  request.post(botURL + '/sendMessage', {form: data});
-
+  request.post(botURL + '/sendMessage', {form: data},
+    function (error, response, body) {
+      if (!error) res.sendStatus(200);
+    });
 });
 
 app.listen(port);
