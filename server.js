@@ -17,11 +17,9 @@ app.post('/api/webhook', function (req, res) {
 
   var msg = req.body.message;
 
-  console.log(msg['chat']['id']);
-
   var data = {}
   data.chat_id = msg['chat']['id'];
-  data.text = 'hi ;) ' + msg['message_id'] + ': ' + msg['text'];
+  data.text = 'hi ;) ' + JSON.stringify(msg);
 
   request.post(botURL + '/sendMessage', {form: data});
 
