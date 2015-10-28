@@ -31,7 +31,7 @@ app.post('/api/webhook', function (req, res) {
       }
     });
 
-  res.sendStatus(200)
+  res.status(200);
 });
 
 app.listen(port);
