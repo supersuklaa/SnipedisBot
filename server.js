@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 
 var botToken = process.env.TELEGRAM_APIKEY;
-var botURL = "https://api.telegram.org/bot" + botToken;
+var botURL = 'https://api.telegram.org/bot' + botToken;
 
 app.post('/api/webhook', function (req, res) {
 
@@ -27,7 +27,7 @@ app.post('/api/webhook', function (req, res) {
   output.chat_id = input.chat_id;
 
   switch (input.command) {
-    case '@SnipedisBot millon juilia saa hävetä?':
+    case '@SnipedisBot millon käyttäjää @juili saa hävetä?':
       output.text = '@' + input.username + ': Aina.';
   }
 
@@ -47,4 +47,4 @@ app.post('/api/webhook', function (req, res) {
 });
 
 app.listen(port);
-console.log("App listening on port " + port);
+console.log('App listening on port ' + port);
