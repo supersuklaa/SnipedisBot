@@ -27,18 +27,28 @@ app.post('/api/webhook', function (req, res) {
 
   var output = {};
   output.chat_id = input.chat_id;
+
+  // Start the 'answer' with @username
   output.text = '@' + input.username + ': ';
 
   // Match input with output
 
   switch (input.text) {
 
-    case '@SnipedisBot millon käyttäjää @juili saa hävetä?':
+    case '@SnipedisBot millon juilia saa hävetä?':
       output.text += 'Aina.';
       break;
 
     case '@SnipedisBot tee jotai':
       output.text += 'e';
+      break;
+
+    case '@SnipedisBot isi ii':
+      output.text += 'cipitii';
+      break;
+
+    case '@SnipedisBot ou gii':
+      output.text += 'straight from da otherside';
       break;
 
   }
@@ -51,12 +61,11 @@ app.post('/api/webhook', function (req, res) {
 
         // TODO
         // ... something ?
+
         res.status(200).send({});
 
       }
     });
-
-  //res.status(200).send({});
 
 });
 
