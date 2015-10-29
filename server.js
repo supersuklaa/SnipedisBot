@@ -27,8 +27,8 @@ app.post('/api/webhook', function (req, res) {
   output.chat_id = input.chat_id;
 
   switch (input.command) {
-    case '/moro':
-      output.text = 'Moi ' + input.username + ' :)';
+    case '@SnipedisBot millon juilia saa hävetä?':
+      output.text = input.username + ': Aina.';
   }
 
   request.post(botURL + '/sendMessage', {form: output},
