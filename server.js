@@ -14,7 +14,7 @@ var botToken = process.env.TELEGRAM_APIKEY;
 var botURL = "https://api.telegram.org/bot" + botToken;
 
 app.post('/api/webhook', function (req, res) {
-
+/*
   var msg = req.body.message;
 
   var data = {}
@@ -30,9 +30,11 @@ app.post('/api/webhook', function (req, res) {
         console.log(JSON.stringify(msg))
       }
     });
-
+*/
   res.status(200).send({});
+
 });
 
 app.listen(port);
 console.log("App listening on port " + port);
+
