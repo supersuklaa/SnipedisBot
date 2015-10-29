@@ -50,6 +50,15 @@ app.post('/api/webhook', function (req, res) {
       output.text += 'straight from da otherside';
       break;
 
+    case '@SnipedisBot jaksaako':
+      var jaksaako = {'jaksaako', 'ei ehkä', 'vois'}
+      output.text += jaksaako[Math.floor((Math.random() * jaksaako.length))];
+      break;
+
+    case '@SnipedisBot ou gii':
+      output.text += 'straight from da otherside';
+      break;
+
     default:
       output.text += 'En ymmärrä :(';
 
