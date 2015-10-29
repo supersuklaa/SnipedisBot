@@ -29,8 +29,13 @@ app.post('/api/webhook', function (req, res) {
   switch (input.command) {
     case '@SnipedisBot millon käyttäjää @juili saa hävetä?':
       output.text = '@' + input.username + ': Aina.';
+    break;
+
+
     case '@SnipedisBot tee jotai':
       output.text = 'e';
+    break;
+    
   }
 
   request.post(botURL + '/sendMessage', {form: output},
@@ -39,11 +44,12 @@ app.post('/api/webhook', function (req, res) {
 
         // TODO
         // ... something ?
+        res.status(200).send({});
 
       }
     });
 
-  res.status(200).send({});
+  //res.status(200).send({});
 
 });
 
