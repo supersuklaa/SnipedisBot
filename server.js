@@ -1,12 +1,12 @@
+
 var express    = require('express');
 var bodyParser = require('body-parser');
 var request    = require('request');
 
 var app = express();
 
-// # Express middleware
-app.use(bodyParser.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
-app.use(bodyParser.json()); // parse json
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
@@ -17,27 +17,34 @@ app.post('/api/webhook', function (req, res) {
 
   var msg = req.body.message;
 
-  var data = {}
-  data.chat_id = msg['chat']['id'];
-  data.text = 'hi ;) ' + JSON.stringify(msg);
+  var input = {};
+  input.chat_id = msg['chat']['id'];
+  input.text = msg.text;
+  input.command = input.text; // ! ! !  TODO  ! ! !
+  input.username = msg.from.username;
 
-  console.log(JSON.stringify(msg));
-  console.log(botToken);
+  var output = {};
+  output.chat_id = input.chat_id;
 
-  request.post(botURL + '/sendMessage', {form: data},
+  switch (input.command) {
+    case '/moro':
+      output.text = 'Moi ' + input.username + ' :)';
+  }
+
+  request.post(botURL + '/sendMessage', {form: output},
     function (error, response, body) {
       if (!error) {
 
         // TODO
         // ... something ?
-        
+        res.status(200).send({});
+
       }
     });
 
-  res.status(200).send({});
+  //res.status(200).send({});
 
 });
 
 app.listen(port);
 console.log("App listening on port " + port);
-
