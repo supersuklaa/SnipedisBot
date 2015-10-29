@@ -51,7 +51,7 @@ app.post('/api/webhook', function (req, res) {
       break;
 
     case '@SnipedisBot jaksaako':
-      var jaksaako = {'jaksaako', 'ei ehkä', 'vois'}
+      var jaksaako = ['jaksaako', 'ei ehkä', 'vois'];
       output.text += jaksaako[Math.floor((Math.random() * jaksaako.length))];
       break;
 
