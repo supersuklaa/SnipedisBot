@@ -28,8 +28,7 @@ app.post('/api/webhook', function (req, res) {
   var output = {};
   output.chat_id = input.chat_id;
 
-  // Start the 'answer' with @username
-  output.text = '@' + input.username + ': ';
+  output.text = '@' + input.username + ': '; // Start the 'answer' with '@username: '
 
   // Match input with output
 
@@ -50,6 +49,9 @@ app.post('/api/webhook', function (req, res) {
     case '@SnipedisBot ou gii':
       output.text += 'straight from da otherside';
       break;
+
+    default:
+      output.text += 'En ymmärrä :(';
 
   }
 
