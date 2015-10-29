@@ -15,28 +15,35 @@ var botURL = 'https://api.telegram.org/bot' + botToken;
 
 app.post('/api/webhook', function (req, res) {
 
+  // Input the input
+
   var msg = req.body.message;
 
   var input = {};
   input.chat_id = msg['chat']['id'];
   input.text = msg.text;
-  input.command = input.text; // ! ! !  TODO  ! ! !
+  // input.command =  TODO  ! ! !
   input.username = msg.from.username;
 
   var output = {};
   output.chat_id = input.chat_id;
+  output.text = '@' + input.username + ': ';
 
-  switch (input.command) {
+  // Match input with output
+
+  switch (input.text) {
+
     case '@SnipedisBot millon käyttäjää @juili saa hävetä?':
-      output.text = '@' + input.username + ': Aina.';
-    break;
-
+      output.text += 'Aina.';
+      break;
 
     case '@SnipedisBot tee jotai':
-      output.text = 'e';
-    break;
-    
+      output.text += 'e';
+      break;
+
   }
+
+  // Output the output
 
   request.post(botURL + '/sendMessage', {form: output},
     function (error, response, body) {
