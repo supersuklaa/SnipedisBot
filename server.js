@@ -37,6 +37,8 @@ app.post('/api/webhook', function (req, res) {
   switch (input.text) {
 
     case '@SnipedisBot millon juilia saa hävetä?':
+    case '@SnipedisBot millon juilia voi hävetä?':
+    case '@SnipedisBot millon juilia pitää hävetä?':
       output.text += 'Aina.';
       break;
 
