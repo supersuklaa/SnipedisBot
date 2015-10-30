@@ -1,9 +1,12 @@
 
-var express         = require('express');
-var bodyParser      = require('body-parser');
-var request         = require('request');
+var express        = require('express');
+var bodyParser     = require('body-parser');
+var request        = require('request');
 
-var response        = require('./response');
+//var snipInput      = require('./snipInput'); TODO input handler
+var snipCmnd       = require('./snipCmnd');
+var snipRes        = require('./snipResponses');
+//var snipOutput     = require('./snipOutput'); TODO output handler
 
 var app = express();
 
@@ -32,8 +35,10 @@ app.post('/api/webhook', function (req, res) {
 
   output.text = '@' + input.username + ': '; // Start the 'answer' with '@username: '
 
-  // Match input with output
+  output.text += snipCmnd(input.text);
 
+  // Match input with output
+/*
   switch (input.text) {
 
     case '@SnipedisBot millon juilia saa hävetä?':
@@ -62,7 +67,7 @@ app.post('/api/webhook', function (req, res) {
       output.text += 'En ymmärrä :(';
 
   }
-
+*/
   // Output the output
 
   request.post(botURL + '/sendMessage', {form: output},
