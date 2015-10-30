@@ -1,9 +1,9 @@
 
+var snipfunc = require('./snipResponse-functions'); // response functions
 
+module.exports = function (usertext) { 
 
-module.exports = function (cmnd) { 
-
-  switch (cmnd) {
+  switch (usertext) {
 
     case '@SnipedisBot millon juilia saa hävetä?':
     case '@SnipedisBot millon juilia voi hävetä?':
@@ -22,11 +22,11 @@ module.exports = function (cmnd) {
     case '@SnipedisBot ou gii':
       return 'straight from da otherside';
       break;
-/*
+
     case '@SnipedisBot jaksaako':
-      return response.jaksaako();
+      return snipfunc.jaksaako();
       break;
-*/
+
     default:
       return 'En ymmärrä :(';
 

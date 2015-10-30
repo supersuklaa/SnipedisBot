@@ -1,7 +1,7 @@
 
 var jaksaako = function () {
 
-	// Just picks one value from the 'randomArr' array
+	// just picks one value from the 'randomArr' array
 	// and returns it
 
 	var randomArr = [
@@ -16,7 +16,7 @@ var jaksaako = function () {
 
 }
 
-// Node exports
+// exports
 
 module.exports = {
 	jaksaako: jaksaako
