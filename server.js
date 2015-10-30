@@ -5,7 +5,7 @@ var request        = require('request');
 
 //var snipInput      = require('./snipInput'); TODO input handler
 var snipCmnd       = require('./snipCmnd');
-var snipRes        = require('./snipResponses');
+//var snipRes        = require('./snipResponses');
 //var snipOutput     = require('./snipOutput'); TODO output handler
 
 var app = express();
