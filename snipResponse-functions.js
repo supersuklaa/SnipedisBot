@@ -1,4 +1,7 @@
 
+var fs       = require('fs');
+var request  = require('request');
+
 var jaksaako = function () {
 
 	// just picks one value from the 'randomArr' array
@@ -16,8 +19,24 @@ var jaksaako = function () {
 
 }
 
+/*
+	T O D O ! !
+*/
+
+var cam = function () {
+
+	var camurl = 'http://tietojohtajakilta.net/webcam/cam_1.jpg';
+	var camfile = 'cam.jpg';
+
+	request(camurl).pipe(fs.createWriteStream(camfile));
+
+	return camfile;
+
+}
+
 // exports
 
 module.exports = {
-	jaksaako: jaksaako
+	jaksaako: jaksaako,
+	cam: cam
 }

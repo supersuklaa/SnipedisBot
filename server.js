@@ -25,6 +25,8 @@ app.post('/api/webhook', function (req, res) {
   var usertext = msg.text;
   var username = msg.from.username;
 
+  // prepare the output
+
   var output = {};
   output.chat_id = chat_id;
   output.text = '@' + username + ': '; // start the 'answer' with '@username: '

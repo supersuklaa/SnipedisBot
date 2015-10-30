@@ -4,9 +4,11 @@
   "description"  : "tg bot",
   "main"         : "server.js",
   "author"       : "zifi",
+  
   "dependencies" : {
-    "express"        : "~4.7.2",
-    "body-parser"    : "~1.5.2",
-    "request"        : "~2.65.0"
+    "express" : "~4.7.2",
+    "body-parser" : "~1.5.2",
+    "request" : "~2.65.0",
+    "fs": "0.0.2"
     }
 }

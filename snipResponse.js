@@ -27,6 +27,11 @@ module.exports = function (usertext) {
       return snipfunc.jaksaako();
       break;
 
+    case '/cam':
+    case '/webcam':
+      return snipfunc.cam();
+      break;
+
     default:
       return 'En ymmärrä :(';
 
