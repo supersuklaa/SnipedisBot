@@ -2,6 +2,7 @@
 var express    = require('express');
 var bodyParser = require('body-parser');
 var request    = require('request');
+var response   = require('./response');
 
 var app = express();
 
@@ -51,14 +52,7 @@ app.post('/api/webhook', function (req, res) {
       break;
 
     case '@SnipedisBot jaksaako':
-      var jaksaako = ['ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
-                      'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan',
-                      'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
-      output.text += jaksaako[Math.floor((Math.random() * jaksaako.length))];
-      break;
-
-    case '@SnipedisBot ou gii':
-      output.text += 'straight from da otherside';
+      output.text += response.jaksaako();
       break;
 
     default:
@@ -72,10 +66,11 @@ app.post('/api/webhook', function (req, res) {
     function (error, response, body) {
       if (!error) {
 
-        // TODO
-        // ... something ?
-
         res.status(200).send({});
+
+      } else {
+
+        res.status(500).send({});
 
       }
     });
