@@ -1,8 +1,9 @@
 
-var express    = require('express');
-var bodyParser = require('body-parser');
-var request    = require('request');
-var response   = require('./response');
+var express         = require('express');
+var bodyParser      = require('body-parser');
+var request         = require('request');
+
+var response        = require('./response');
 
 var app = express();
 
