@@ -26,10 +26,14 @@ module.exports = function (usertext) {
     case '@SnipedisBot jaksaako':
       return snipfunc.jaksaako();
       break;
-
+/*
     case '/cam':
     case '/webcam':
       return snipfunc.cam();
+      break;
+*/
+    case '/kahvutti':
+      return 'Keitä ite.';
       break;
 
     default:
