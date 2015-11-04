@@ -3,11 +3,16 @@ var snipfunc = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 
-  switch (usertext) {
+  // strip '@SnipedisBot ' from text and lowercase the rest
 
-    case '@SnipedisBot millon juilia saa hävetä?':
-    case '@SnipedisBot millon juilia voi hävetä?':
-    case '@SnipedisBot millon juilia pitää hävetä?':
+  usertext = usertext.replace('@SnipedisBot ', '');
+  usertext = usertext.toLowerCase();
+
+  switch (usertext.toLowerCase()) {
+
+    case 'millon juilia saa hävetä?':
+    case 'millon juilia voi hävetä?':
+    case 'millon juilia pitää hävetä?':
       return 'Aina.';
       break;
 
@@ -16,10 +21,13 @@ module.exports = function (usertext) {
       break;
 
     case '@SnipedisBot isi ii':
+    case '@SnipedisBot easy e':
+    case '@SnipedisBot easy-e':
       return 'cipitii';
       break;
 
     case '@SnipedisBot ou gii':
+    case '@SnipedisBot og':
       return 'straight from da otherside';
       break;
 
