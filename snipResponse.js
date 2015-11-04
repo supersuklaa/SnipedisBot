@@ -16,6 +16,10 @@ module.exports = function (usertext) {
       return 'Aina.';
       break;
 
+    case '/bobross':
+      return snipfunc.bobross();
+      break;
+
     case 'tee jotai':
       return 'e';
       break;

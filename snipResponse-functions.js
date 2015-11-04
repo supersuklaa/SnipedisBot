@@ -19,6 +19,23 @@ var jaksaako = function () {
 
 }
 
+var bobross = function () {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var randomArr = [
+		'RUINED', 'SAVED IT', '420 PAINT IT', 'Happy little cabin',
+		'Happy little trees'];
+
+	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
+	var randomVal = randomArr[randomKey];
+
+	return randomVal;
+
+
+}
+
 /*
 	T O D O ! !
 */
@@ -38,5 +55,6 @@ var cam = function () {
 
 module.exports = {
 	jaksaako: jaksaako,
+	bobross: bobross,
 	cam: cam
 }
