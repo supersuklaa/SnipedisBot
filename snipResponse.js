@@ -16,22 +16,22 @@ module.exports = function (usertext) {
       return 'Aina.';
       break;
 
-    case '@SnipedisBot tee jotai':
+    case 'tee jotai':
       return 'e';
       break;
 
-    case '@SnipedisBot isi ii':
-    case '@SnipedisBot easy e':
-    case '@SnipedisBot easy-e':
+    case 'isi ii':
+    case 'easy e':
+    case 'easy-e':
       return 'cipitii';
       break;
 
-    case '@SnipedisBot ou gii':
-    case '@SnipedisBot og':
+    case 'ou gii':
+    case 'og':
       return 'straight from da otherside';
       break;
 
-    case '@SnipedisBot jaksaako':
+    case 'jaksaako':
       return snipfunc.jaksaako();
       break;
 /*
