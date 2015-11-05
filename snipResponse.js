@@ -48,7 +48,7 @@ module.exports = function (usertext) {
       break;
 
     default:
-      return '';
+      return null;
 
   }
 
