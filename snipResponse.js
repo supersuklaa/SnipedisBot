@@ -3,9 +3,9 @@ var snipfunc = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 
-  // strip '@SnipedisBot ' from text and lowercase the rest
+  // lowercase the text and remove '@snipedisbot '
 
-  usertext = usertext.replace('@SnipedisBot ', '').toLowerCase();
+  usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
 
   switch (usertext) {
 
@@ -26,7 +26,7 @@ module.exports = function (usertext) {
     case 'isi ii':
     case 'easy e':
     case 'easy-e':
-      return 'cipitii';
+      return 'C-P-T';
       break;
 
     case 'ou gii':
