@@ -5,10 +5,9 @@ module.exports = function (usertext) {
 
   // strip '@SnipedisBot ' from text and lowercase the rest
 
-  usertext = usertext.replace('@SnipedisBot ', '');
-  usertext = usertext.toLowerCase();
+  usertext = usertext.replace('@SnipedisBot ', '').toLowerCase();
 
-  switch (usertext.toLowerCase()) {
+  switch (usertext) {
 
     case 'millon juilia saa hävetä?':
     case 'millon juilia voi hävetä?':

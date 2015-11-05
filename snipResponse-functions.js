@@ -25,7 +25,7 @@ var bobross = function () {
 	// and returns it
 
 	var randomArr = [
-		'RUINED', 'SAVED IT', '420 PAINT IT', 'Happy little cabin',
+		'RUINED', 'SAVED IT', '420 PAINT IT', 'Charming little cabin',
 		'Happy little trees'];
 
 	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
