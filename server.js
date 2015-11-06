@@ -28,14 +28,14 @@ app.post('/api/webhook', function (req, res) {
   // prepare the output
 
   var output = {};
-  /*
+  
   if (snipResponse(usertext)) {
 
     output.chat_id = chat_id;
     output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext);
 
-  }*/
+  }
 
   // output the output
 
