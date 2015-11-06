@@ -32,7 +32,7 @@ app.post('/api/webhook', function (req, res) {
   if (snipResponse(usertext)) {
 
     output.chat_id = chat_id;
-    output.text = '@' + username + ': '; // start the 'answer' with '@username: '
+    // output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext);
 
   }
@@ -50,6 +50,8 @@ app.post('/api/webhook', function (req, res) {
       } else {
 
         res.status(500).send({});
+
+        console.log(error);
 
       }
     });
