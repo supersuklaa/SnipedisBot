@@ -28,15 +28,15 @@ app.post('/api/webhook', function (req, res) {
   // prepare the output
 
   var output = {};
-  output.chat_id = chat_id;
-
+  /*
   if (snipResponse(usertext)) {
 
+    output.chat_id = chat_id;
     output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext);
 
-  }
-  
+  }*/
+
   // output the output
 
   request.post(botURL + '/sendMessage', {form: output},
