@@ -21,6 +21,8 @@ app.post('/api/webhook', function (req, res) {
 
   var msg = req.body.message;
 
+  console.log(msg);
+
   var chat_id = msg['chat']['id'];
   var usertext = msg.text;
   var username = msg.from.username;

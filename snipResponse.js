@@ -7,13 +7,6 @@ module.exports = function (usertext) {
 
   usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
 
-  var re = new RegExp(usertext);
-
-  if(re == /jaksaako*/){
-    return snipfunc.jaksaako();
-    break;
-  }
-
   switch (usertext) {
 
     case 'millon juilia saa hävetä?':
