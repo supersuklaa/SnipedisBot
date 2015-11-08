@@ -24,7 +24,7 @@ var coinflip = function (randomArr) {
 	// just picks one value from the 'randomArr' array
 	// and returns it
 
-	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
+	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
 
 	return randomVal;
