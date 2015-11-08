@@ -24,11 +24,10 @@ var coinflip = function (usertext) {
 	usertext = usertext.replace(', ', ' ');
 
 	var textsplit = usertext.split(" ");
-	var textcount = textsplit.length;
 
-	textsplit.splice(textcount - 2, 1);
+	textsplit.splice(textsplit.length - 2, 1);
 
-	var randomKey = Math.floor(Math.random() * textcount);
+	var randomKey = Math.floor(Math.random() * textsplit.length);
 	var randomVal = textsplit[randomKey];
 
 	return randomVal;
