@@ -24,7 +24,7 @@ var coinflip = function (usertext) {
 	// remove commas and ' vai '
 	// then split string into array and return random value
 
-	usertext = usertext.replace(/,/g, '').replace(' vai ', ' ');
+	usertext = usertext.replace(/,/g, '').replace(/ vai /gi, ' ');
 
 	var textsplit = usertext.split(' ');
 
@@ -42,8 +42,9 @@ var coinflipCheck = function (usertext) {
 
 	var textsplit = usertext.split(' ');
 	var textcount = textsplit.length;
+	var secondlastword = textsplit[textcount - 2].toLowerCase();
 
-	if (textsplit[textcount - 2] == 'vai') return true;
+	if (secondlastword == 'vai' && textcount > 2) return true;
 	else return false;
 
 }

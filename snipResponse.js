@@ -3,12 +3,8 @@ var snipfunc = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 
-  // lowercase the text and remove '@snipedisbot '
-
-  // TODO: use /gi in replace
-
-  usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
-  usertext = usertext.replace('?', '');
+  usertext = usertext.replace(/@snipedisbot /gi, '');
+  usertext = usertext.replace('?', ''); // TODO: onko tämä hyvä ?
 
   if (snipfunc.coinflipCheck(usertext)) {
 
@@ -17,6 +13,8 @@ module.exports = function (usertext) {
   }
 
   else {
+
+    usertext = usertext.toLowerCase();
 
     switch (usertext) {
 
