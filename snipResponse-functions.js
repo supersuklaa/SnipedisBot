@@ -21,7 +21,7 @@ var jaksaako = function () {
 
 var coinflip = function (usertext) {
 
-	usertext = usertext.replace(',', '');
+	usertext = usertext.replace(', ', ' ');
 
 	var textsplit = usertext.split(" ");
 	var textcount = textsplit.length;
