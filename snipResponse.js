@@ -14,6 +14,8 @@ module.exports = function (usertext) {
   if (textsplit[textcount - 1] == 'vai') {
     textsplit.splice(textcount - 2, 1);
 
+    console.log(textsplit);
+
     return snipfunc.coinflip(textsplit);
   }
 
