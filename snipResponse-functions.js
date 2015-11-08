@@ -19,6 +19,19 @@ var jaksaako = function () {
 
 }
 
+var coinflip = function (randomArr) {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
+	var randomVal = randomArr[randomKey];
+
+	return randomVal;
+
+
+}
+
 var bobross = function () {
 
 	// just picks one value from the 'randomArr' array
