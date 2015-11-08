@@ -11,7 +11,7 @@ module.exports = function (usertext) {
   var textsplit = usertext.split(" ");
   var textcount = textsplit.length;
 
-  if (textsplit[textcount - 1] == 'vai') {
+  if (textsplit[textcount - 2] == 'vai') {
     textsplit.splice(textcount - 2, 1);
 
     console.log(textsplit);
