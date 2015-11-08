@@ -21,11 +21,12 @@ var jaksaako = function () {
 
 var coinflip = function (usertext) {
 
-	usertext = usertext.replace(/,/g, '');
+	// remove commas and ' vai '
+	// then split string into array and return random value
+
+	usertext = usertext.replace(/,/g, '').replace(' vai ', ' ');
 
 	var textsplit = usertext.split(' ');
-
-	textsplit.splice(textsplit.length - 2, 1);
 
 	var randomKey = Math.floor(Math.random() * textsplit.length);
 	var randomVal = textsplit[randomKey];
@@ -36,7 +37,7 @@ var coinflip = function (usertext) {
 
 var coinflipCheck = function (usertext) {
 
-	var textsplit = usertext.split(" ");
+	var textsplit = usertext.split(' ');
 	var textcount = textsplit.length;
 
 	if (textsplit[textcount - 2] == 'vai') return true;

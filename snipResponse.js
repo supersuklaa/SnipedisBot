@@ -10,9 +10,8 @@ module.exports = function (usertext) {
 
   if (snipfunc.coinflipCheck(usertext)) {
 
-    console.log(usertext);
-
     return snipfunc.coinflip(usertext);
+    
   }
 
   else {
