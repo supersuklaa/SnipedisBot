@@ -6,17 +6,13 @@ module.exports = function (usertext) {
   // lowercase the text and remove '@snipedisbot '
 
   usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
-  usertext = usertext.replace('?', '').replace(',', '');
+  usertext = usertext.replace('?', '');
 
-  var textsplit = usertext.split(" ");
-  var textcount = textsplit.length;
+  if (coinflipCheck(usertext)) {
 
-  if (textsplit[textcount - 2] == 'vai') {
-    textsplit.splice(textcount - 2, 1);
+    console.log(usertext);
 
-    console.log(textsplit);
-
-    return snipfunc.coinflip(textsplit);
+    return snipfunc.coinflip(usertext);
   }
 
   else {

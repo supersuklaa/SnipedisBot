@@ -12,23 +12,36 @@ var jaksaako = function () {
 		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan',
 		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
 
-	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
+	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
 
 	return randomVal;
 
 }
 
-var coinflip = function (randomArr) {
+var coinflip = function (usertext) {
 
-	// just picks one value from the 'randomArr' array
-	// and returns it
+	usertext = usertext.replace(',', '');
 
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
+	var textsplit = usertext.split(" ");
+	var textcount = textsplit.length;
+
+	textsplit.splice(textcount - 2, 1);
+
+	var randomKey = Math.floor(Math.random() * textcount);
+	var randomVal = textsplit[randomKey];
 
 	return randomVal;
 
+}
+
+var coinflipCheck = function (usertext) {
+
+	var textsplit = usertext.split(" ");
+	var textcount = textsplit.length;
+
+	if (textsplit[textcount - 2] == 'vai') return true;
+	else return false;
 
 }
 
@@ -41,7 +54,7 @@ var bobross = function () {
 		'RUINED', 'SAVED IT', '420 PAINT IT', 'Charming little cabin',
 		'Happy little trees'];
 
-	var randomKey = Math.floor(Math.random() * (randomArr.length - 1));
+	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
 
 	return randomVal;
@@ -70,5 +83,6 @@ module.exports = {
 	jaksaako: jaksaako,
 	bobross: bobross,
 	coinflip: coinflip,
+	coinflipCheck: coinflipCheck,
 	cam: cam
 }
