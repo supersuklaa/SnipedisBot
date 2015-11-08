@@ -8,7 +8,7 @@ module.exports = function (usertext) {
   usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
   usertext = usertext.replace('?', '');
 
-  if (coinflipCheck(usertext)) {
+  if (snipfunc.coinflipCheck(usertext)) {
 
     console.log(usertext);
 
