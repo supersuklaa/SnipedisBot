@@ -69,5 +69,6 @@ var cam = function () {
 module.exports = {
 	jaksaako: jaksaako,
 	bobross: bobross,
+	coinflip: coinflip,
 	cam: cam
 }
