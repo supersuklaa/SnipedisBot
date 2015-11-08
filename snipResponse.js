@@ -5,13 +5,15 @@ module.exports = function (usertext) {
 
   // lowercase the text and remove '@snipedisbot '
 
+  // TODO: use /gi in replace
+
   usertext = usertext.toLowerCase().replace('@snipedisbot ', '');
   usertext = usertext.replace('?', '');
 
   if (snipfunc.coinflipCheck(usertext)) {
 
     return snipfunc.coinflip(usertext);
-    
+
   }
 
   else {

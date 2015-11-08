@@ -28,6 +28,9 @@ var coinflip = function (usertext) {
 
 	var textsplit = usertext.split(' ');
 
+	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
+	if (textsplit.length > 2) textsplit.push('Kaikki');
+
 	var randomKey = Math.floor(Math.random() * textsplit.length);
 	var randomVal = textsplit[randomKey];
 
