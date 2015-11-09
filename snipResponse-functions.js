@@ -66,23 +66,26 @@ var jaksaako = function (usertext) {
 
 	// get everything after the first word
 
-	var textArgs = usertext.substr(usertext.indexOf(' ') + 1);
+	var textArgs = usertext.substr(usertext.indexOf(' '));
 
-	// just picks one value from the 'randomArr' array
-	// and returns it
+	// random responds
 
 	var randomArr = [
 		'ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan', 'Jaksaneekohan',
 		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
 
-	// if there is something after the first word
+	// moar responds if there is something after the first word
 
 	if (usertext.indexOf(' ') > 0) {
 		randomArr.push(
-		'ei ehkä jaksa ' + textArgs, 'en tiiä jaksaako ' + textArgs,
-		'katotaan jaksaako ' + textArgs, 'ei varmaan jaksa ' + textArgs);
+			'ei ehkä jaksa' + textArgs,
+			'en tiiä jaksaako' + textArgs,
+			'katotaan jaksaako' + textArgs,
+			'ei varmaan jaksa' + textArgs);
 	}
+
+	// pick one random line
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
