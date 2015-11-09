@@ -74,11 +74,15 @@ var jaksaako = function (usertext) {
 	var randomArr = [
 		'ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan', 'Jaksaneekohan',
-		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä',
+		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
 
+	// if there is something after the first word
 
+	if (usertext.indexOf(' ') > 0) {
+		randomArr.push(
 		'ei ehkä jaksa ' + textArgs, 'en tiiä jaksaako ' + textArgs,
-		'katotaan jaksaako ' + textArgs, 'ei varmaan jaksa ' + textArgs];
+		'katotaan jaksaako ' + textArgs, 'ei varmaan jaksa ' + textArgs);
+	}
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
