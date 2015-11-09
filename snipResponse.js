@@ -38,6 +38,10 @@ module.exports = function (usertext) {
         return 'e';
         break;
 
+      case '420'
+        return 'Blaze it';
+        break;
+
       case 'isi ii':
       case 'easy e':
       case 'easy-e':
