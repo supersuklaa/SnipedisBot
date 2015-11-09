@@ -23,11 +23,7 @@ module.exports = function (usertext) {
       case 'millon juilia pitää hävetä':
         return 'Aina.';
         break;
-  /*
-      case '/420':
-        return snipfunc.nextEpisode();
-        break;
-  */
+
       case '/bobross':
         return snipfunc.bobross();
         break;
@@ -51,16 +47,20 @@ module.exports = function (usertext) {
       case 'mee roskii':
         return snipfunc.jaksaako();
         break;
+
+      case '/kahvutti':
+        return 'Keitä ite.';
+        break;
   /*
+      case '/420':
+        return snipfunc.nextEpisode();
+        break;
+
       case '/cam':
       case '/webcam':
         return snipfunc.cam();
         break;
   */
-      case '/kahvutti':
-        return 'Keitä ite.';
-        break;
-
       default:
         return null;
 
