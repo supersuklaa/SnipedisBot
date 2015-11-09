@@ -13,7 +13,7 @@ module.exports = function (usertext) {
 
     return snipfunc.coinflip(usertext);
 
-  else {
+  } else {
 
     usertext = usertext.toLowerCase();
 
