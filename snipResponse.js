@@ -38,7 +38,7 @@ module.exports = function (usertext) {
         return 'e';
         break;
 
-      case '420'
+      case '420':
         return 'Blaze it';
         break;
 
