@@ -1,5 +1,6 @@
 
-var snipfunc = require('./snipResponse-functions'); // response functions
+var snipcheck   = require('./snipResponse-checks'); // response functions
+var snipfunc    = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 
@@ -9,11 +10,11 @@ module.exports = function (usertext) {
   // check if usertext corresponds to coinflip
   // else do the usual stuff
 
-  if (snipfunc.coinflipCheck(usertext)) {
+  if (snipcheck.coinflip(usertext)) {
 
     return snipfunc.coinflip(usertext);
 
-  } else if (snipfunc.jaksaakoCheck(usertext)) {
+  } else if (snipcheck.jaksaako(usertext)) {
 
     return snipfunc.jaksaako(usertext);
 
@@ -49,24 +50,10 @@ module.exports = function (usertext) {
         return 'straight from da otherside';
         break;
 
-      /*case 'jaksaako':
-      case 'mee roskii':
-        return snipfunc.jaksaako();
-        break;*/
-
       case '/kahvutti':
         return 'Keitä ite.';
         break;
-  /*
-      case '/420':
-        return snipfunc.nextEpisode();
-        break;
 
-      case '/cam':
-      case '/webcam':
-        return snipfunc.cam();
-        break;
-  */
       default:
         return null;
 
