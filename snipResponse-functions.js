@@ -41,7 +41,32 @@ var coinflipCheck = function (usertext) {
 
 }
 
-var jaksaako = function () {
+var jaksaakoCheck = function (usertext) {
+
+	var textsplit = usertext.split(' ');
+	var firstword = textsplit[0].toLowerCase();
+
+	switch (firstword) {
+
+		case 'jaksaako':
+		case 'jaksaakohan':
+		case 'jaksaisko':
+		case 'jaksasko':
+			return true;
+			break;
+
+		default:
+			return false;
+
+	}
+
+}
+
+var jaksaako = function (usertext) {
+
+	// get everything after the first word
+
+	var textArgs = usertext.substr(usertext.indexOf(' ') + 1);
 
 	// just picks one value from the 'randomArr' array
 	// and returns it
@@ -49,7 +74,11 @@ var jaksaako = function () {
 	var randomArr = [
 		'ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan', 'Jaksaneekohan',
-		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
+		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä',
+
+
+		'ei ehkä jaksa ' + textArgs, 'en tiiä jaksaako ' + textArgs,
+		'katotaan jaksaako ' + textArgs, 'ei varmaan jaksa ' + textArgs];
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
@@ -93,6 +122,7 @@ var cam = function () {
 
 module.exports = {
 	jaksaako: jaksaako,
+	jaksaakoCheck: jaksaakoCheck,
 	bobross: bobross,
 	coinflip: coinflip,
 	coinflipCheck: coinflipCheck,

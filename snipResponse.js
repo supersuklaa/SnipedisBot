@@ -13,6 +13,10 @@ module.exports = function (usertext) {
 
     return snipfunc.coinflip(usertext);
 
+  } else if (snipfunc.jaksaakoCheck(usertext)) {
+
+    return snipfunc.jaksaako(usertext);
+
   } else {
 
     usertext = usertext.toLowerCase();
@@ -45,10 +49,10 @@ module.exports = function (usertext) {
         return 'straight from da otherside';
         break;
 
-      case 'jaksaako':
+      /*case 'jaksaako':
       case 'mee roskii':
         return snipfunc.jaksaako();
-        break;
+        break;*/
 
       case '/kahvutti':
         return 'Keitä ite.';
