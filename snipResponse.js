@@ -6,11 +6,12 @@ module.exports = function (usertext) {
   usertext = usertext.replace(/@snipedisbot /gi, '');
   usertext = usertext.replace('?', ''); // TODO: onko tämä hyvä ?
 
+  // check if usertext corresponds to coinflip
+  // else do the usual stuff
+
   if (snipfunc.coinflipCheck(usertext)) {
 
     return snipfunc.coinflip(usertext);
-
-  }
 
   else {
 
@@ -29,6 +30,7 @@ module.exports = function (usertext) {
         break;
 
       case 'tee jotai':
+      case 'ime kullii':
         return 'e';
         break;
 
