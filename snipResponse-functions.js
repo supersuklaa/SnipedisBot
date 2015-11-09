@@ -12,8 +12,10 @@ var coinflip = function (usertext) {
 
 	var textsplit = usertext.split(' ');
 
-	if (textsplit.length > 3) textsplit.push('Ei noist mikää', 'emt jaksaaks ny arpoo');
-	if (textsplit.length > 2) textsplit.push('Kaikki');
+	// add couple of random responses :--)
+
+	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
+	if (textsplit.length > 2) textsplit.push('Kaikki', 'emt jaksaaks ny arpoo');
 
 	var randomKey = Math.floor(Math.random() * textsplit.length);
 	var randomVal = textsplit[randomKey];
