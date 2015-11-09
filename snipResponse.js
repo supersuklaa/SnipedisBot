@@ -39,7 +39,7 @@ module.exports = function (usertext) {
         break;
 
       case '420':
-        return 'https://www.youtube.com/watch?v=QZXc39hT8t4';
+        return 'https://vimeo.com/62917133';
         break;
 
       case 'isi ii':
