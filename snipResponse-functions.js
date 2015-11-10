@@ -101,8 +101,14 @@ var mikavitun = function (usertext) {
 		}
 	};
 
-	if (selitys) return selitys;
-	else return 'emt';
+	var lol = 'Kakattaa.';
+
+	if (selitys) {
+		selitys = selitys.replace('\n\n', '\n\n' + lol + '\n\n');
+		return selitys;
+	} else {
+		return 'emt';
+	}
 
 }
 
