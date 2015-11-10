@@ -87,11 +87,12 @@ var cam = function () {
 
 }
 
-var mitatapahtuu = function (userdate) {
+var mitatapahtuu = function (usertext, userdate) {
 
-	userdate = moment.unix(userdate).format("YYYY-MM-DD");
 	var userevent;
 	var randomArr = [];
+
+	userdate = moment.unix(userdate).format("YYYY-MM-DD");
 
 	for (var i = kalenteri.length - 1; i >= 0; i--) {
 		if (kalenteri[i].date == userdate) {
@@ -100,19 +101,29 @@ var mitatapahtuu = function (userdate) {
 	};
 
 	if (userevent) {
+
+		userevent = userevent.toLowerCase();
+
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
-			'joku ' + userevent + '? emt kinostaaks');
+			'joku ' + userevent + '? emt kinostaaks',
+			'öö joku ' + userevent + ' lol',
+			userevent + '? ei ehkä kiinnosta',
+			userevent + '!! vois kaljaa');
+
 	} else {
+
 		randomArr.push(
 			'emt ei mitää kai',
-			'ei mitää');
+			'ei mitää',
+			'emt');
+
 	}
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
 
-	return randomVal;	
+	return randomVal;
 
 }
 
