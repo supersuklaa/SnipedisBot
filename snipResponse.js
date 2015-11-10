@@ -1,6 +1,6 @@
 
 var snipcheck = require('./snipResponse-checks'), // response checks
-     snipfunc = require('./snipResponse-functions'); // response functions
+    snipfunc  = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 

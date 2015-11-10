@@ -1,8 +1,7 @@
 
 var fs        = require('fs'),
-    request   = require('request');
-//    kalenteri = require('./resources/kalenteri.json');
-
+    request   = require('request'),
+    kalenteri = require('./resources/kalenteri');
 
 var coinflip = function (usertext) {
 
@@ -89,7 +88,7 @@ var cam = function () {
 
 var mitatanaan = function () {
 
-	var kalenteri = JSON.parse(fs.readFileSync('./resources/kalenteri.json', 'utf8'));
+	//var kalenteri = JSON.parse(fs.readFileSync('./resources/kalenteri.json', 'utf8'));
 
 	console.log(kalenteri[0]);
 
