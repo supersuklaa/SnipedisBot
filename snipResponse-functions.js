@@ -102,24 +102,38 @@ var mikavitun = function (usertext) {
 	usertext = usertext.toLowerCase();
 	usertext = usertext.replace('mikä vitun ', '');
 
-	var description;
+	var description, userevent;
 
 	for (var i = calender.length - 1; i >= 0; i--) {
 		if (calender[i].name.toLowerCase() == usertext) {
 			description = calender[i].description;
+			userevent = calender[i].name;
+
 			break;
 		}
 	};
 
-	// add random paragraph to description
-
-	var lol = 'Kakattaa.'; // todo: funnier random paragraph
-
 	if (description) {
-		description = description.replace('\n\n', '\n\n' + lol + '\n\n');
+
+		var paragraph = 'Kakattaa.'; // todo: get creative
+
+		// add random paragraph to description
+		description = description.replace(
+			'\n\n', '\n\n' + paragraph + '\n\n');
+
 		return description;
+
+	} else if (userevent) {
+
+		// if found event, but it didn't have a description
+
+		return 'tuttu tapahtuma mut emt'; // todo: get creative
+
 	} else {
-		return 'emt'; // todo: get creative with this 
+
+		// if didn't even find event
+
+		return 'emt'; // todo: get creative
 	}
 
 }
