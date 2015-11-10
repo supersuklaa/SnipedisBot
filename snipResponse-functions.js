@@ -132,8 +132,8 @@ var mitatapahtuu = function (usertext, userdate) {
 			'ois ' + userevent + ' mut emt jaksaako',
 			'joku ' + userevent + '? emt kinostaaks',
 			'öö joku ' + userevent + ' lol',
-			userevent + '? ei ehkä kiinnosta',
-			userevent + '!! vois kaljaa');
+			'no olis ' + userevent + '? ei ehkä kiinnosta',
+			'TÄNÄÄ RYYPÄTÄÄ, se ois nimittäi ' + userevent);
 
 	} else {
 
