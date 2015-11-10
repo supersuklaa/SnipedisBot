@@ -90,7 +90,7 @@ var cam = function () {
 var mikavitun = function (usertext) {
 
 	usertext = usertext.toLowerCase();
-	usertext = usertext.replace('mikä vitun', '');
+	usertext = usertext.replace('mikä vitun ', '');
 
 	var selitys;
 
