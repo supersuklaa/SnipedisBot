@@ -114,9 +114,10 @@ var mitatapahtuu = function (usertext, userdate) {
 	} else {
 
 		randomArr.push(
-			'emt ei mitää kai',
-			'ei mitää',
-			'emt');
+			'emt ei mitää kai', 'lepään',
+			'ei mitää', 'vois nousta ehk',
+			'emt', 'ensin palautus sitten pajautus',
+			'vois nukkuu? tai emt jaksaaks');
 
 	}
 
