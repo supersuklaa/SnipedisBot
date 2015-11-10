@@ -1,6 +1,7 @@
 
-var fs       = require('fs');
-var request  = require('request');
+var fs        = require('fs'),
+    request   = require('request'),
+    kalenteri = require('../resources/kalenteri.json');
 
 
 var coinflip = function (usertext) {
@@ -43,7 +44,6 @@ var jaksaako = function (usertext) {
 		randomArr.push(
 			'ei ehkä jaksa' + textArgs,
 			'en tiiä jaksaako' + textArgs,
-			'katotaan jaksaako' + textArgs,
 			'ei varmaan jaksa' + textArgs);
 	}
 
@@ -87,9 +87,16 @@ var cam = function () {
 
 }
 
+var mitatanaan = function () {
+
+	console.log(kalenteri[0]);
+
+}
+
 // exports
 
 module.exports = {
+	mitatanaan: mitatanaan,
 	jaksaako: jaksaako,
 	bobross: bobross,
 	coinflip: coinflip,

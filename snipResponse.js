@@ -1,13 +1,15 @@
 
-var snipcheck   = require('./snipResponse-checks'); // response functions
-var snipfunc    = require('./snipResponse-functions'); // response functions
+var snipcheck = require('./snipResponse-checks'), // response checks
+     snipfunc = require('./snipResponse-functions'); // response functions
 
 module.exports = function (usertext) { 
 
   usertext = usertext.replace(/@snipedisbot /gi, '');
   usertext = usertext.replace('?', ''); // TODO: onko tämä hyvä ?
 
-  // check if usertext corresponds to coinflip
+  // check if usertext corresponds to
+  // - coinflip
+  // - jaksaako
   // else do the usual stuff
 
   if (snipcheck.coinflip(usertext)) {
@@ -56,6 +58,10 @@ module.exports = function (usertext) {
 
       case '/kahvutti':
         return 'Keitä ite.';
+        break;
+
+      case 'mitä tänää':
+        return snipfunc.mitatanaan();
         break;
 
       default:
