@@ -1,7 +1,8 @@
 
 var fs        = require('fs'),
     request   = require('request'),
-    kalenteri = require('./resources/kalenteri');
+    kalenteri = require('./resources/kalenteri'),
+    moment    = require('moment');
 
 var coinflip = function (usertext) {
 
@@ -86,11 +87,32 @@ var cam = function () {
 
 }
 
-var mitatanaan = function () {
+var mitatanaan = function (userdate) {
 
-	//var kalenteri = JSON.parse(fs.readFileSync('./resources/kalenteri.json', 'utf8'));
+	userdate = moment.unix(userdate).format("YYYY-DD-MM");
+	var userevent;
+	var randomArr = [];
 
-	console.log(kalenteri[0]);
+	for (var i = kalenteri.length - 1; i >= 0; i--) {
+		if (kalenteri[i].date == userdate) {
+			userevent = kalenteri[i].name;
+		}
+	};
+
+	if (userevent) {
+		randomArr.push(
+			'ois ' + userevent + ' mut emt jaksaako',
+			'joku ' + userevent + '? emt kinostaaks');
+	} else {
+		randomArr.push(
+			'emt ei mitää kai',
+			'ei mitää');
+	}
+
+	var randomKey = Math.floor(Math.random() * randomArr.length);
+	var randomVal = randomArr[randomKey];
+
+	return randomVal;	
 
 }
 

@@ -2,7 +2,7 @@
 var snipcheck = require('./snipResponse-checks'), // response checks
     snipfunc  = require('./snipResponse-functions'); // response functions
 
-module.exports = function (usertext) { 
+module.exports = function (usertext, userdate) { 
 
   usertext = usertext.replace(/@snipedisbot /gi, '');
   usertext = usertext.replace('?', ''); // TODO: onko tämä hyvä ?
@@ -61,7 +61,7 @@ module.exports = function (usertext) {
         break;
 
       case 'mitä tänää':
-        return snipfunc.mitatanaan();
+        return snipfunc.mitatanaan(userdate);
         break;
 
       default:
