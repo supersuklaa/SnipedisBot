@@ -1,9 +1,11 @@
 
 var mikavitun = function (usertext) {
 
+	// check if usertext starts with 'mikä vitun'
+
 	usertext = usertext.toLowerCase();
 
-	if (usertext.substring(0, 10) == "mikä vitun") return true;
+	if (usertext.substring(0, 10) == 'mikä vitun') return true;
 	else return false;
 
 }
@@ -26,6 +28,8 @@ var coinflip = function (usertext) {
 }
 
 var jaksaako = function (usertext) {
+
+	// check if usertext starts with 'jaksaako' or something like that
 
 	var textsplit = usertext.split(' ');
 	var firstword = textsplit[0].toLowerCase();

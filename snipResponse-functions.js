@@ -1,13 +1,16 @@
 
 var fs        = require('fs'),
     request   = require('request'),
-    kalenteri = require('./resources/kalenteri'),
+    calender  = require('./resources/kalenteri'),
     moment    = require('moment');
 
 var coinflip = function (usertext) {
 
+	// not just a coinflip, but basically split the usertext
+	// and output one of the alternatives... or something else
+
 	// remove commas and ' vai '
-	// then split string into array and return random value
+	// then split string into array
 
 	usertext = usertext.replace(/,/g, '').replace(/ vai /gi, ' ');
 
@@ -27,6 +30,8 @@ var coinflip = function (usertext) {
 
 var jaksaako = function (usertext) {
 
+	// basically, respond something random
+
 	// get everything after the first word
 
 	var textArgs = usertext.substr(usertext.indexOf(' '));
@@ -34,9 +39,11 @@ var jaksaako = function (usertext) {
 	// random responds
 
 	var randomArr = [
-		'ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
-		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan', 'Jaksaneekohan',
-		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä', 'pitäsköhä'];
+		'ei ehkä', 'vois', 'Ei ehkä jaksa',
+		'harkitsen mutten tiiä jaksaako',
+		'ehkä vois mut emt jaksaako', 'Ei jaksa',
+		'katotaan', 'Jaksaneekohan', 'en tiiä jaksaako',
+		'jaksaakohan', 'en oo päättäny vielä', 'pitäsköhä'];
 
 	// moar responds if there is something after the first word
 
@@ -89,30 +96,36 @@ var cam = function () {
 
 var mikavitun = function (usertext) {
 
+	// just find out if there is description for event
+
 	usertext = usertext.toLowerCase();
 	usertext = usertext.replace('mikä vitun ', '');
 
-	var selitys;
+	var description;
 
-	for (var i = kalenteri.length - 1; i >= 0; i--) {
-		if (kalenteri[i].name.toLowerCase() == usertext) {
-			selitys = kalenteri[i].description;
+	for (var i = calender.length - 1; i >= 0; i--) {
+		if (calender[i].name.toLowerCase() == usertext) {
+			description = calender[i].description;
 			break;
 		}
 	};
 
-	var lol = 'Kakattaa.';
+	// add random paragraph to description
 
-	if (selitys) {
-		selitys = selitys.replace('\n\n', '\n\n' + lol + '\n\n');
-		return selitys;
+	var lol = 'Kakattaa.'; // todo: funnier random paragraph
+
+	if (description) {
+		description = description.replace('\n\n', '\n\n' + lol + '\n\n');
+		return description;
 	} else {
-		return 'emt';
+		return 'emt'; // todo: get creative with this 
 	}
 
 }
 
 var mitatapahtuu = function (usertext, userdate) {
+
+	// find out if there is a corresponding event for userdate
 
 	var userevents = [];
 	var randomArr = [];
@@ -123,13 +136,16 @@ var mitatapahtuu = function (usertext, userdate) {
 
 	// go tru kalenteri.json and get userdate's event
 
-	for (var i = kalenteri.length - 1; i >= 0; i--) {
-		if (kalenteri[i].date == userdate) {
-			userevents.push(kalenteri[i].name.toLowerCase());
+	for (var i = calender.length - 1; i >= 0; i--) {
+		if (calender[i].date == userdate) {
+			userevents.push(calender[i].name.toLowerCase());
 		}
 	};
 
 	if (userevents.length > 0) {
+
+		// there might be more than one event per day
+		// so pick one randomly
 
 		var eventKey = Math.floor(Math.random() * userevents.length);
 		var userevent = userevents[eventKey];
@@ -145,7 +161,6 @@ var mitatapahtuu = function (usertext, userdate) {
 
 		randomArr.push(
 			'emt ei mitää kai',
-			'ei naiselta rakoa ilman puhdasta kainalovakoa!',
 			'ei mitää', 'vois nousta ehk',
 			'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
