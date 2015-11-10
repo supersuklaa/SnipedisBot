@@ -89,7 +89,7 @@ var cam = function () {
 
 var mitatapahtuu = function (usertext, userdate) {
 
-	var userevent;
+	var userevents = [];
 	var randomArr = [];
 
 	// change unixtimestamp to correspond .json-file's timestamp
@@ -100,12 +100,14 @@ var mitatapahtuu = function (usertext, userdate) {
 
 	for (var i = kalenteri.length - 1; i >= 0; i--) {
 		if (kalenteri[i].date == userdate) {
-			userevent = kalenteri[i].name.toLowerCase();
-			break;
+			userevents.push(kalenteri[i].name.toLowerCase());
 		}
 	};
 
-	if (userevent) {
+	if (userevents.length > 0) {
+
+		var eventKey = Math.floor(Math.random() * userevents.length);
+		var userevent = userevents[eventKey];
 
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
