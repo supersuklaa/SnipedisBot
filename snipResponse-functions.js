@@ -1,7 +1,7 @@
 
 var fs        = require('fs'),
     request   = require('request'),
-    kalenteri = require('../resources/kalenteri.json');
+    kalenteri = require('./resources/kalenteri.json');
 
 
 var coinflip = function (usertext) {
