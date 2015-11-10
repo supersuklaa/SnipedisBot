@@ -124,7 +124,7 @@ var mikavitun = function (usertext) {
 
 }
 
-var mitatapahtuu = function (usertext, userdate) {
+var mitatapahtuu = function (userdate) {
 
 	// find out if there is a corresponding event for userdate
 

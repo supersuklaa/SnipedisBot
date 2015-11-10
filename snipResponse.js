@@ -7,24 +7,20 @@ module.exports = function (usertext, userdate) {
   usertext = usertext.replace(/@snipedisbot /gi, '');
   usertext = usertext.replace('?', ''); // TODO: onko tämä hyvä ?
 
-  // check if usertext corresponds to
-  // - coinflip
-  // - jaksaako
-  // else do the usual stuff
+  // check if usertext needs a closer look
 
   if (snipcheck.coinflip(usertext)) {
-
     return snipfunc.coinflip(usertext);
 
   } else if (snipcheck.jaksaako(usertext)) {
-
     return snipfunc.jaksaako(usertext);
 
   } else if (snipcheck.mikavitun(usertext)) {
-
     return snipfunc.mikavitun(usertext);
 
   } else {
+
+    // responds which don't require analyzing of usertext
 
     usertext = usertext.toLowerCase();
 
@@ -66,12 +62,11 @@ module.exports = function (usertext, userdate) {
 
       case 'mitä tänää':
       case 'mitä tänään':
-        return snipfunc.mitatapahtuu(usertext, userdate);
+        return snipfunc.mitatapahtuu(userdate);
         break;
 
       case 'mitä huomenna':
-        return snipfunc.mitatapahtuu(
-          usertext, userdate + 86400); // seconds in 1 day
+        return snipfunc.mitatapahtuu(userdate + 86400); // seconds in 1 day
         break;
 
       default:
