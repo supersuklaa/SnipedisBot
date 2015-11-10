@@ -92,17 +92,20 @@ var mitatapahtuu = function (usertext, userdate) {
 	var userevent;
 	var randomArr = [];
 
+	// change unixtimestamp to correspond .json-file's timestamp
+
 	userdate = moment.unix(userdate).format("YYYY-MM-DD");
+
+	// go tru kalenteri.json and get userdate's event
 
 	for (var i = kalenteri.length - 1; i >= 0; i--) {
 		if (kalenteri[i].date == userdate) {
-			userevent = kalenteri[i].name;
+			userevent = kalenteri[i].name.toLowerCase();
+			break;
 		}
 	};
 
 	if (userevent) {
-
-		userevent = userevent.toLowerCase();
 
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
@@ -120,6 +123,8 @@ var mitatapahtuu = function (usertext, userdate) {
 			'vois nukkuu? tai emt jaksaaks');
 
 	}
+
+	// return something random
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
