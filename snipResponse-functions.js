@@ -91,7 +91,7 @@ var mitatanaan = function () {
 
 	var kalenteri = JSON.parse(fs.readFileSync('./resources/kalenteri.json', 'utf8'));
 
-	console.log(kalenteri);
+	console.log(kalenteri[0]);
 
 }
 
