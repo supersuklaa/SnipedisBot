@@ -1,4 +1,13 @@
 
+var mikavitun = function (usertext) {
+
+	usertext = usertext.toLowerCase();
+
+	if (usertext.substring(0, 10) == "mikä vitun") return true;
+	else return false;
+
+}
+
 var coinflip = function (usertext) {
 
 	// split text into words
@@ -41,5 +50,6 @@ var jaksaako = function (usertext) {
 
 module.exports = {
 	jaksaako: jaksaako,
-	coinflip: coinflip
+	coinflip: coinflip,
+	mikavitun: mikavitun
 }

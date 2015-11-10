@@ -87,6 +87,25 @@ var cam = function () {
 
 }
 
+var mikavitun = function (usertext) {
+
+	usertext = usertext.toLowerCase();
+	usertext = usertext.replace('mikä vitun', '');
+
+	var selitys;
+
+	for (var i = kalenteri.length - 1; i >= 0; i--) {
+		if (kalenteri[i].name.toLowerCase() == usertext) {
+			selitys = kalenteri[i].description;
+			break;
+		}
+	};
+
+	if (selitys) return selitys;
+	else return 'emt';
+
+}
+
 var mitatapahtuu = function (usertext, userdate) {
 
 	var userevents = [];
@@ -119,7 +138,8 @@ var mitatapahtuu = function (usertext, userdate) {
 	} else {
 
 		randomArr.push(
-			'emt ei mitää kai', 'lepään',
+			'emt ei mitää kai',
+			'ei naiselta rakoa ilman puhdasta kainalovakoa!',
 			'ei mitää', 'vois nousta ehk',
 			'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks');
@@ -142,5 +162,6 @@ module.exports = {
 	jaksaako: jaksaako,
 	bobross: bobross,
 	coinflip: coinflip,
+	mikavitun: mikavitun,
 	cam: cam
 }

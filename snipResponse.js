@@ -20,6 +20,10 @@ module.exports = function (usertext, userdate) {
 
     return snipfunc.jaksaako(usertext);
 
+  } else if (snipcheck.mikavitun(usertext)) {
+
+    return snipfunc.mikavitun(usertext);
+
   } else {
 
     usertext = usertext.toLowerCase();
