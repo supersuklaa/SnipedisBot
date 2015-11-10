@@ -16,7 +16,7 @@ var coinflip = function (usertext) {
 
 	var textsplit = usertext.split(' ');
 
-	// add couple of random responses :--)
+	// add couple of random responses
 
 	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
 	if (textsplit.length > 2) textsplit.push('Kaikki', 'emt jaksaaks ny arpoo');
