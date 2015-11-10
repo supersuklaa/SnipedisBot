@@ -6,8 +6,9 @@ var fs        = require('fs'),
 
 var coinflip = function (usertext) {
 
-	// not just a coinflip, but basically split the usertext
-	// and output one of the alternatives... or something else
+	// not just a coinflip
+	// basically split the usertext and output
+	// one of the alternatives... or something else
 
 	// remove commas and ' vai '
 	// then split string into array
