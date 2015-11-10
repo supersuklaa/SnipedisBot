@@ -36,7 +36,7 @@ var jaksaako = function (usertext) {
 	var randomArr = [
 		'ei ehkä', 'vois', 'Ei ehkä jaksa', 'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa', 'katotaan', 'Jaksaneekohan',
-		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä'];
+		'en tiiä jaksaako', 'jaksaakohan', 'en oo päättäny vielä', 'pitäsköhä'];
 
 	// moar responds if there is something after the first word
 
@@ -148,7 +148,9 @@ var mitatapahtuu = function (usertext, userdate) {
 			'ei naiselta rakoa ilman puhdasta kainalovakoa!',
 			'ei mitää', 'vois nousta ehk',
 			'emt', 'ensin palautus sitten pajautus',
-			'vois nukkuu? tai emt jaksaaks');
+			'vois nukkuu? tai emt jaksaaks',
+			'kapinassa vois käyä muljulla jos jaksaa',
+			'voisit mennä vaikka roskiin');
 
 	}
 
