@@ -87,9 +87,9 @@ var cam = function () {
 
 }
 
-var mitatanaan = function (userdate) {
+var mitatapahtuu = function (userdate) {
 
-	userdate = moment.unix(userdate).format("YYYY-DD-MM");
+	userdate = moment.unix(userdate).format("YYYY-MM-DD");
 	var userevent;
 	var randomArr = [];
 
@@ -119,7 +119,7 @@ var mitatanaan = function (userdate) {
 // exports
 
 module.exports = {
-	mitatanaan: mitatanaan,
+	mitatapahtuu: mitatapahtuu,
 	jaksaako: jaksaako,
 	bobross: bobross,
 	coinflip: coinflip,

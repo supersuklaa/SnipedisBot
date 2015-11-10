@@ -61,7 +61,11 @@ module.exports = function (usertext, userdate) {
         break;
 
       case 'mitä tänää':
-        return snipfunc.mitatanaan(userdate);
+        return snipfunc.mitatapahtuu(userdate);
+        break;
+
+      case 'mitä huomenna':
+        return snipfunc.mitatapahtuu(userdate + 86400); // seconds in 1 day
         break;
 
       default:
