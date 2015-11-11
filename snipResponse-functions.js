@@ -69,7 +69,7 @@ var bobross = function () {
 	// and returns it
 
 	var randomArr = [
-		'RUINED', 'SAVED IT', '420 PAINT IT', 'Charming little cabin',
+		'Ruined', 'Saved it', 'Charming little cabin',
 		'Happy little trees'];
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
@@ -98,25 +98,31 @@ var mikavitun = function (usertext) {
 
 	// just find out if there is description for event
 
+	// get everything after 'mikä vitun '
+
 	usertext = usertext.toLowerCase();
 	usertext = usertext.replace('mikä vitun ', '');
+
+	// go through calender and find event and description
 
 	var description, userevent;
 
 	for (var i = calender.length - 1; i >= 0; i--) {
 		if (calender[i].name.toLowerCase() == usertext) {
-			description = calender[i].description;
 			userevent = calender[i].name;
+			description = calender[i].description;
 
 			break;
 		}
 	};
 
+	// if it was found, return description 
+
 	if (userevent && description) {
 
+		// add random paragraph to description
 		var paragraph = 'Kakattaa.'; // todo: get creative
 
-		// add random paragraph to description
 		description = description.replace(
 			'\n\n', '\n\n' + paragraph + '\n\n');
 
@@ -133,9 +139,9 @@ var mikavitun = function (usertext) {
 
 	else {
 
-		// if didn't even find event
+		// if didn't even find a event
 		return 'emt'; // todo: get creative
-		
+
 	}
 
 }
@@ -144,20 +150,23 @@ var mitatapahtuu = function (userdate) {
 
 	// find out if there is a corresponding event for userdate
 
+	// change userdate's unixtimestamp -> 'YYYY-MM-DD'
+
+	userdate = moment.unix(userdate).format('YYYY-MM-DD');
+
+	// go through calender and get userdate's event
+
 	var userevents = [];
-	var randomArr = [];
-
-	// change unixtimestamp to correspond .json-file's timestamp
-
-	userdate = moment.unix(userdate).format("YYYY-MM-DD");
-
-	// go tru kalenteri.json and get userdate's event
 
 	for (var i = calender.length - 1; i >= 0; i--) {
 		if (calender[i].date == userdate) {
 			userevents.push(calender[i].name.toLowerCase());
 		}
 	};
+
+	// return something (almost) random
+
+	var randomArr = [];
 
 	if (userevents.length > 0) {
 
@@ -185,8 +194,6 @@ var mitatapahtuu = function (userdate) {
 			'voisit mennä vaikka roskiin');
 
 	}
-
-	// return something random
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
