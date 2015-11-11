@@ -181,14 +181,14 @@ var mitatapahtuu = function (userdate) {
 			'joku ' + userevent + '? emt kinostaaks',
 			'öö joku ' + userevent + ' lol',
 			'no olis ' + userevent + '? ei ehkä kiinnosta',
-			'TÄNÄÄ RYYPÄTÄÄ, se ois nimittäi ' + userevent);
+			'NO RYYPÄTÄÄ, se ois nimittäi ' + userevent);
 
 	} else {
 
 		// there was no event
 
 		randomArr.push(
-			'emt ei mitää kai',
+			'emt ei mitää kai', 'oisko se kerhotorstai'
 			'ei mitää', 'vois nousta ehk',
 			'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
