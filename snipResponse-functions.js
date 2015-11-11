@@ -188,7 +188,7 @@ var mitatapahtuu = function (userdate) {
 		// there was no event
 
 		randomArr.push(
-			'emt ei mitää kai', 'oisko se kerhotorstai'
+			'emt ei mitää kai', 'oisko se kerhotorstai',
 			'ei mitää', 'vois nousta ehk',
 			'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
