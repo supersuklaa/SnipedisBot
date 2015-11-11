@@ -33,12 +33,6 @@ var jaksaako = function (usertext) {
 
 	// basically, respond something random
 
-	// get everything after the first word
-
-	if (usertext.indexOf(' ') > 0 ) {
-		var textArgs = usertext.substr(usertext.indexOf(' '));
-	}
-
 	// random responds
 
 	var randomArr = [
@@ -50,11 +44,14 @@ var jaksaako = function (usertext) {
 
 	// moar responds if there is something after the first word
 
-	if (textArgs) {
+	if (usertext.indexOf(' ') > 0 ) {
+
+		var textArgs = usertext.substr(usertext.indexOf(' '));
 		randomArr.push(
 			'ei ehkä jaksa' + textArgs,
 			'en tiiä jaksaako' + textArgs,
 			'ei varmaan jaksa' + textArgs);
+
 	}
 
 	// pick one random line
@@ -115,7 +112,7 @@ var mikavitun = function (usertext) {
 		}
 	};
 
-	if (description) {
+	if (userevent && description) {
 
 		var paragraph = 'Kakattaa.'; // todo: get creative
 
@@ -125,17 +122,20 @@ var mikavitun = function (usertext) {
 
 		return description;
 
-	} else if (userevent) {
+	}
 
-		// if found event, but it didn't have a description
+	else if (userevent && !description) {
 
+		// if event was found, but it didn't have a description
 		return 'tuttu tapahtuma mut emt'; // todo: get creative
 
-	} else {
+	}
+
+	else {
 
 		// if didn't even find event
-
 		return 'emt'; // todo: get creative
+		
 	}
 
 }
