@@ -185,6 +185,8 @@ var mitatapahtuu = function (userdate) {
 
 	} else {
 
+		// there was no event
+
 		randomArr.push(
 			'emt ei mitää kai',
 			'ei mitää', 'vois nousta ehk',
