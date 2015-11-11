@@ -189,8 +189,7 @@ var mitatapahtuu = function (userdate) {
 
 		randomArr.push(
 			'emt ei mitää kai', 'oisko se kerhotorstai',
-			'ei mitää', 'vois nousta ehk',
-			'emt', 'ensin palautus sitten pajautus',
+			'ei mitää', 'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
 			'kapinassa vois käyä muljulla jos jaksaa',
 			'voisit mennä vaikka roskiin');
