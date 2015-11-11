@@ -6,9 +6,9 @@ var fs        = require('fs'),
 
 var coinflip = function (usertext) {
 
-	// not just a coinflip
+	// not just a coinflip really
 	// basically split the usertext and output
-	// one of the alternatives... or something else
+	// one of the words
 
 	// remove commas and ' vai '
 	// then split string into array
@@ -48,7 +48,7 @@ var jaksaako = function (usertext) {
 
 	// moar responds if there is something after the first word
 
-	if (usertext.indexOf(' ') > 0) {
+	if (textArgs) {
 		randomArr.push(
 			'ei ehkä jaksa' + textArgs,
 			'en tiiä jaksaako' + textArgs,

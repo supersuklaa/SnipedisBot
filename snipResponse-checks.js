@@ -5,7 +5,7 @@ var mikavitun = function (usertext) {
 
 	usertext = usertext.toLowerCase();
 
-	if (usertext.substring(0, 10) == 'mikä vitun') return true;
+	if (usertext.substring(0, 11) == 'mikä vitun ') return true;
 	else return false;
 
 }
