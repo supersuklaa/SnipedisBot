@@ -35,7 +35,9 @@ var jaksaako = function (usertext) {
 
 	// get everything after the first word
 
-	var textArgs = usertext.substr(usertext.indexOf(' '));
+	if (usertext.indexOf(' ') > 0 ) {
+		var textArgs = usertext.substr(usertext.indexOf(' '));
+	}
 
 	// random responds
 
