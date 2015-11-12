@@ -101,14 +101,15 @@ var mikavitun = function (usertext) {
 	// get everything after 'mikä vitun '
 
 	usertext = usertext.toLowerCase();
-	usertext = usertext.replace('mikä vitun ', '');
+	//usertext = usertext.replace('mikä vitun ', '');
 
 	// go through calender and find event and description
 
 	var description, userevent;
 
 	for (var i = calender.length - 1; i >= 0; i--) {
-		if (calender[i].name.toLowerCase() == usertext) {
+		//if (calender[i].name.toLowerCase() == usertext) {
+		if (usertext.indexOf(calender[i].name.toLowerCase()) > 0) {
 			userevent = calender[i].name;
 			description = calender[i].description;
 
