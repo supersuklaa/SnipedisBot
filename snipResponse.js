@@ -5,7 +5,7 @@ var snipcheck = require('./snipResponse-checks'), // response checks
 module.exports = function (usertext, userdate) { 
 
   usertext = usertext.replace(/@snipedisbot /gi, '');
-  usertext = usertext.replace(/?/gi, ''); // TODO: onko tämä hyvä ?
+  usertext = usertext.replace(/\?/gi, ''); // TODO: onko tämä hyvä ?
 
   // check if usertext needs a closer look
 
