@@ -44,7 +44,7 @@ module.exports = function (usertext, userdate) {
         return 'e';
         break;
 
-      case '420':
+      case '/420':
         return 'https://vimeo.com/62917133';
         break;
 
