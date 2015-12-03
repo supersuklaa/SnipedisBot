@@ -63,6 +63,21 @@ var jaksaako = function (usertext) {
 
 }
 
+var kiitos = function (usertext) {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var randomArr = [
+		'ei mitään =)', 'np :)'];
+
+	var randomKey = Math.floor(Math.random() * randomArr.length);
+	var randomVal = randomArr[randomKey];
+
+	return randomVal;
+
+}
+
 var bobross = function () {
 
 	// just picks one value from the 'randomArr' array

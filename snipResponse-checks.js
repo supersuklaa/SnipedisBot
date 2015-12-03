@@ -27,6 +27,28 @@ var coinflip = function (usertext) {
 
 }
 
+var kiitos = function (usertext) {
+
+	// check if usertext starts with 'kiitos' or something like that
+
+	var textsplit = usertext.split(' ');
+	var firstword = textsplit[0].toLowerCase();
+
+	switch (firstword) {
+
+		case 'kiitän':
+		case 'kiitos':
+		case 'kiitoksia':
+		case 'kitos':
+			return true;
+			break;
+
+		default:
+			return false;
+
+	}
+}
+
 var jaksaako = function (usertext) {
 
 	// check if usertext starts with 'jaksaako' or something like that
