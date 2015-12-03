@@ -77,5 +77,6 @@ var jaksaako = function (usertext) {
 module.exports = {
 	jaksaako: jaksaako,
 	coinflip: coinflip,
+	kiitos: kiitos,
 	mikavitun: mikavitun
 }
