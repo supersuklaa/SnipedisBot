@@ -120,8 +120,6 @@ var mikavitun = function (usertext) {
 
 	// just find out if there is description for event
 
-	// get everything after 'mikä vitun '
-
 	usertext = usertext.toLowerCase();
 
 	// go through calender and find event and description
