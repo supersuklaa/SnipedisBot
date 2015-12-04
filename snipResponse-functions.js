@@ -200,7 +200,7 @@ var mitatapahtuu = function (userdate) {
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
 			'joku ' + userevent + '? emt kinostaaks',
-			'joku ' + userevent + ' ' + emoji.get(':shit:') + emoji.get(':blush:'),
+			'joku ' + userevent + ' ' + emoji.get(':hankey:') + emoji.get(':blush:'),
 			'öö joku ' + userevent + ' lol',
 			'no olis ' + userevent + '? ei ehkä kiinnosta',
 			'NO RYYPÄTÄÄ, se ois nimittäi ' + userevent);
