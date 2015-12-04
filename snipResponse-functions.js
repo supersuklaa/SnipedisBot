@@ -41,7 +41,8 @@ var jaksaako = function (usertext) {
 		'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa',
 		'katotaan', 'Jaksaneekohan', 'en tiiä jaksaako',
-		'jaksaakohan', 'en oo päättäny vielä', 'pitäsköhä'];
+		'jaksaakohan', 'en oo päättäny vielä', 'pitäsköhä',
+		emoji.get(':hankey:') + ' ei jaksa'];
 
 	// moar responds if there is something after the first word
 
@@ -200,7 +201,7 @@ var mitatapahtuu = function (userdate) {
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
 			'joku ' + userevent + '? emt kinostaaks',
-			'joku ' + userevent + ' ' + emoji.get(':hankey:') + emoji.get(':blush:'),
+			'joku ' + userevent + ' ' + emoji.get(':hankey:') + emoji.get(':hankey:'),
 			'öö joku ' + userevent + ' lol',
 			'no olis ' + userevent + '? ei ehkä kiinnosta',
 			'NO RYYPÄTÄÄ, se ois nimittäi ' + userevent);
