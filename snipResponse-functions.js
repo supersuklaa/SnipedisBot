@@ -69,8 +69,6 @@ var kiitos = function (usertext) {
 	// just picks one value from the 'randomArr' array
 	// and returns it
 
-	// check emojis: http://www.emoji-cheat-sheet.com/
-
 	var randomArr = [
 		'ei mitään', 'np', 'Ei tarvitse kiittää'];
 
@@ -78,8 +76,9 @@ var kiitos = function (usertext) {
 	var randomVal = randomArr[randomKey];
 
 	// add funny emoji :)
+	// check emojis: http://www.emoji-cheat-sheet.com/
 
-	randomVal += " " + emoji.get(':blush:');
+	randomVal += ' ' + emoji.get(':blush:');
 
 	return randomVal;
 
@@ -201,6 +200,7 @@ var mitatapahtuu = function (userdate) {
 		randomArr.push(
 			'ois ' + userevent + ' mut emt jaksaako',
 			'joku ' + userevent + '? emt kinostaaks',
+			'joku ' + userevent + ' ' + emoji.get(':poop:') + emoji.get(':poop:'),
 			'öö joku ' + userevent + ' lol',
 			'no olis ' + userevent + '? ei ehkä kiinnosta',
 			'NO RYYPÄTÄÄ, se ois nimittäi ' + userevent);
