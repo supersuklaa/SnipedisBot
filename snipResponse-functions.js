@@ -2,6 +2,7 @@
 var fs        = require('fs'),
     request   = require('request'),
     calender  = require('./resources/kalenteri'),
+    emoji     = require('node-emoji'),
     moment    = require('moment');
 
 var coinflip = function (usertext) {
@@ -68,11 +69,17 @@ var kiitos = function (usertext) {
 	// just picks one value from the 'randomArr' array
 	// and returns it
 
+	// check emojis: http://www.emoji-cheat-sheet.com/
+
 	var randomArr = [
-		'ei mitään =)', 'np :)'];
+		'ei mitään', 'np', 'Ei tarvitse kiittää'];
 
 	var randomKey = Math.floor(Math.random() * randomArr.length);
 	var randomVal = randomArr[randomKey];
+
+	// add funny emoji :)
+
+	randomVal += " " + emoji.get(':blush:');
 
 	return randomVal;
 
