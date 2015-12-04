@@ -41,6 +41,7 @@ module.exports = function (usertext, userdate) {
 
       case 'tee jotai':
       case 'ime kullii':
+      case 'ime kikkii':
         return 'e';
         break;
 

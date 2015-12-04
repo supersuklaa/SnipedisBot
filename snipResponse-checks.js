@@ -40,6 +40,7 @@ var kiitos = function (usertext) {
 		case 'kiitos':
 		case 'kiitoksia':
 		case 'kitos':
+		case 'kiitti':
 			return true;
 			break;
 
