@@ -235,7 +235,6 @@ var weed = function () {
 
 		case '16:20':
 		case '4:20':
-		case '17:29':
 			return 'https://vimeo.com/62917133';
 			break;
 
