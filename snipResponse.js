@@ -43,10 +43,12 @@ module.exports = function (usertext, userdate) {
       case 'tee jotai':
       case 'ime kullii':
       case 'ime kikkii':
+      case 'mee roskii':
         return 'e';
         break;
 
       case '/420':
+        return snipfunc.weed();
         return 'https://vimeo.com/62917133';
         break;
 

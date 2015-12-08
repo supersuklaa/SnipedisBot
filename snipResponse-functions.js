@@ -102,8 +102,9 @@ var bobross = function () {
 }
 
 /*
+
 	T O D O ! !
-*/
+
 
 var cam = function () {
 
@@ -115,6 +116,8 @@ var cam = function () {
 	return camfile;
 
 }
+
+*/
 
 var mikavitun = function (usertext) {
 
@@ -131,11 +134,11 @@ var mikavitun = function (usertext) {
 			userevent = calender[i].name;
 			description = calender[i].description;
 
-			break;
+			break; // stop looping after description is found
 		}
 	};
 
-	// if it was found, return description 
+	// if description was found, return it 
 
 	if (userevent && description) {
 
@@ -224,14 +227,18 @@ var mitatapahtuu = function (userdate) {
 
 }
 
+var weed = function () {
+
+}
+
 // exports
 
 module.exports = {
+	weed: weed,
 	mitatapahtuu: mitatapahtuu,
 	jaksaako: jaksaako,
 	bobross: bobross,
 	coinflip: coinflip,
 	kiitos: kiitos,
-	mikavitun: mikavitun,
-	cam: cam
+	mikavitun: mikavitun
 }
