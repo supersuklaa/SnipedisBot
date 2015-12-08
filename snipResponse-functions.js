@@ -229,6 +229,11 @@ var mitatapahtuu = function (userdate) {
 
 var weed = function () {
 
+	var time = moment().format('HH:mm')
+
+
+	return 'Kello on ' + time;
+	//return 'https://vimeo.com/62917133';
 }
 
 // exports

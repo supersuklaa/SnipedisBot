@@ -49,7 +49,6 @@ module.exports = function (usertext, userdate) {
 
       case '/420':
         return snipfunc.weed();
-        return 'https://vimeo.com/62917133';
         break;
 
       case 'isi ii':
