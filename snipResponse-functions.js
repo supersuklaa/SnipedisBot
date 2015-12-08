@@ -231,11 +231,22 @@ var mitatapahtuu = function (userdate) {
 
 var weed = function () {
 
-	var time = moment().format('HH:mm')
+	var time = moment().format('HH:mm');
 
+	if (time == '16:20' || time == '4:20') {
+		return 'https://vimeo.com/62917133';
 
-	return 'Kello on ' + time;
-	//return 'https://vimeo.com/62917133';
+	} else {
+		var randomArr = [
+			'Kello on ' + time + ' typerys',
+			'Kello on ' + time + emoji.get(':hankey:')];
+
+		var randomKey = Math.floor(Math.random() * randomArr.length);
+
+		return randomArr[randomKey];
+
+	}
+
 }
 
 // exports
