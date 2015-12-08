@@ -231,7 +231,9 @@ var mitatapahtuu = function (userdate) {
 
 var weed = function () {
 
-	switch (moment().format('HH:mm')) {
+	var time = moment().format('HH:mm');
+
+	switch (time) {
 
 		case '16:20':
 		case '4:20':
