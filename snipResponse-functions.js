@@ -3,7 +3,9 @@ var fs        = require('fs'),
     request   = require('request'),
     calender  = require('./resources/kalenteri'),
     emoji     = require('node-emoji'),
-    moment    = require('moment');
+    moment    = require('moment-timezone');
+
+moment.tz.setDefault('Europe/Helsinki');
 
 var coinflip = function (usertext) {
 

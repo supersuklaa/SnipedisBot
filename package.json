@@ -1,16 +1,17 @@
 {
-  "name"         : "SnipedisBot",
-  "version"      : "0.1.0",
-  "description"  : "tg bot",
-  "main"         : "server.js",
-  "author"       : "zifi",
+  "name" : "SnipedisBot",
+  "version" : "0.1.0",
+  "description" : "tg bot",
+  "main" : "server.js",
+  "author" : "zifi",
   
   "dependencies"  : {
-    "express"     : "~4.7.2",
+    "express" : "~4.7.2",
     "body-parser" : "~1.5.2",
-    "request"     : "~2.65.0",
-    "fs"          : "0.0.2",
-    "moment"      : "~2.10.6",
+    "request" : "~2.65.0",
+    "fs" : "0.0.2",
+    "moment" : "~2.10.6",
+    "moment-timezone": "~0.4.0",
     "node-emoji"  : "~1.0.4"
     }
 }
