@@ -231,19 +231,23 @@ var mitatapahtuu = function (userdate) {
 
 var weed = function () {
 
-	var time = moment().format('HH:mm');
+	switch (moment().format('HH:mm')) {
 
-	if (time == '16:20' || time == '4:20') {
-		return 'https://vimeo.com/62917133';
+		case '16:20':
+		case '4:20':
+		case '17:27':
+			return 'https://vimeo.com/62917133';
+			break;
 
-	} else {
-		var randomArr = [
-			'Kello on ' + time + ' typerys',
-			'Kello on ' + time + emoji.get(':hankey:')];
+		default:
 
-		var randomKey = Math.floor(Math.random() * randomArr.length);
+			var randomArr = [
+				'Kello on ' + time + ' typerys',
+				'Kello on ' + time + emoji.get(':hankey:')];
 
-		return randomArr[randomKey];
+			var randomKey = Math.floor(Math.random() * randomArr.length);
+
+			return randomArr[randomKey];
 
 	}
 
