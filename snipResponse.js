@@ -16,6 +16,9 @@ module.exports = function (usertext, userdate) {
   } else if (snipcheck.jaksaako(usertext)) {
     return snipfunc.jaksaako(usertext);
 
+  } else if (snipcheck.sori(usertext)) {
+    return snipfunc.sori(usertext);
+
   } else if (snipcheck.kiitos(usertext)) {
     return snipfunc.kiitos(usertext);
 

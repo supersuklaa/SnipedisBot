@@ -87,6 +87,27 @@ var kiitos = function (usertext) {
 
 }
 
+var sori = function (usertext) {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var randomArr = [
+		'Asia on jo käytännössä unohdettu',
+		'Ei tarvitse pyytää anteeksi'];
+
+	var randomKey = Math.floor(Math.random() * randomArr.length);
+	var randomVal = randomArr[randomKey];
+
+	// add funny emoji :)
+	// check emojis: http://www.emoji-cheat-sheet.com/
+
+	randomVal += ' ' + emoji.get(':blush:');
+
+	return randomVal;
+
+}
+
 var bobross = function () {
 
 	// just picks one value from the 'randomArr' array

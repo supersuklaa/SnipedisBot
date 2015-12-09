@@ -27,6 +27,28 @@ var coinflip = function (usertext) {
 
 }
 
+var sori = function (usertext) {
+
+	// check if usertext starts with 'kiitos' or something like that
+
+	var textsplit = usertext.split(' ');
+	var firstword = textsplit[0].toLowerCase();
+
+	switch (firstword) {
+
+		case 'sori':
+		case 'anteeks':
+		case 'anteeksi':
+			return true;
+			break;
+
+		default:
+			return false;
+
+	}
+}
+
+
 var kiitos = function (usertext) {
 
 	// check if usertext starts with 'kiitos' or something like that
@@ -79,5 +101,6 @@ module.exports = {
 	jaksaako: jaksaako,
 	coinflip: coinflip,
 	kiitos: kiitos,
+	sori: sori,
 	mikavitun: mikavitun
 }
