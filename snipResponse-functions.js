@@ -241,15 +241,15 @@ var weed = function () {
 			break;
 
 		default:
-
 			var randomArr = [
 				'Kello on ' + time + ' typerys',
-				'Kello on ' + time + emoji.get(':hankey:')];
+				'Kello on ' + time + emoji.get(':hankey:'),
+				'Ei vielä' + emoji.get(':hankey:') + ' kello on ' + time];
 
 			var randomKey = Math.floor(Math.random() * randomArr.length);
 
 			return randomArr[randomKey];
-
+			
 	}
 
 }
