@@ -284,5 +284,6 @@ module.exports = {
 	bobross: bobross,
 	coinflip: coinflip,
 	kiitos: kiitos,
+	sori: sori,
 	mikavitun: mikavitun
 }
