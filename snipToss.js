@@ -7,7 +7,7 @@ module.exports = function (input) {
 	// Check if input is an array, and return one random value
 
 	switch (input.constructor) {
-		case 'Array':
+		case Array:
 
 			return input[Math.floor(Math.random() * input.length)];
 			break;
