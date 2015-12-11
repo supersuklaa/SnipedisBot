@@ -6,14 +6,15 @@ module.exports = function (input) {
 
 	// Check if input is an array, and return one random value
 
-	switch (input.constructor) {
-		case Array:
+	if (input.constructor === Array) {
 
-			return input[Math.floor(Math.random() * input.length)];
-			break;
+		return input[Math.floor(Math.random() * input.length)];
 
-		default:
-			return input;
+	} else {
+
+		return input;
+
 	}
+
 
 }
