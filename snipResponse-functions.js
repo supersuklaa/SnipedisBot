@@ -26,9 +26,6 @@ var coinflip = function (usertext) {
 	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
 	if (textsplit.length > 2) textsplit.push('Kaikki', 'emt jaksaaks ny arpoo');
 
-	//var randomKey = Math.floor(Math.random() * textsplit.length);
-	//var randomVal = textsplit[randomKey];
-
 	return snipToss(textsplit);
 
 }
@@ -39,7 +36,7 @@ var jaksaako = function (usertext) {
 
 	// random responds
 
-	var randomArr = [
+	var responds = [
 		'ei ehkä', 'vois', 'Ei ehkä jaksa',
 		'harkitsen mutten tiiä jaksaako',
 		'ehkä vois mut emt jaksaako', 'Ei jaksa',
@@ -52,60 +49,48 @@ var jaksaako = function (usertext) {
 	if (usertext.indexOf(' ') > 0 ) {
 
 		var textArgs = usertext.substr(usertext.indexOf(' '));
-		randomArr.push(
+		responds.push(
 			'ei ehkä jaksa' + textArgs,
 			'en tiiä jaksaako' + textArgs,
 			'ei varmaan jaksa' + textArgs);
 
 	}
 
-	// pick one random line
-
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
-
-	return randomVal;
+	return snipToss(responds);
 
 }
 
 var kiitos = function (usertext) {
 
-	// just picks one value from the 'randomArr' array
-	// and returns it
-
-	var randomArr = [
+	var responds = [
 		'ei mitään', 'np', 'Ei tarvitse kiittää'];
 
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
+	var output = snipToss(responds);
 
 	// add funny emoji :)
 	// check emojis: http://www.emoji-cheat-sheet.com/
 
-	randomVal += ' ' + emoji.get(':blush:');
+	output += ' ' + emoji.get(':blush:');
 
-	return randomVal;
+	return output;
 
 }
 
 var sori = function (usertext) {
 
-	// just picks one value from the 'randomArr' array
-	// and returns it
-
-	var randomArr = [
+	var responds = [
 		'Asia on jo käytännössä unohdettu',
 		'Ei tarvitse pyytää anteeksi'];
 
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
+	var output = snipToss(responds);
 
 	// add funny emoji :)
 	// check emojis: http://www.emoji-cheat-sheet.com/
 
-	randomVal += ' ' + emoji.get(':blush:');
+	output += ' ' + emoji.get(':blush:');
 
-	return randomVal;
+	return output;
+
 
 }
 
@@ -114,14 +99,11 @@ var bobross = function () {
 	// just picks one value from the 'randomArr' array
 	// and returns it
 
-	var randomArr = [
+	var responds = [
 		'Ruined', 'Saved it', 'Charming little cabin',
 		'Happy little trees'];
 
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
-
-	return randomVal;
+	return snipToss(responds);
 
 }
 
