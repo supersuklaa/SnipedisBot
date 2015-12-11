@@ -52,7 +52,8 @@ var jaksaako = function (usertext) {
 		responds.push(
 			'ei ehkä jaksa' + textArgs,
 			'en tiiä jaksaako' + textArgs,
-			'ei varmaan jaksa' + textArgs);
+			'ei varmaan jaksa' + textArgs,
+			'vois ehk' + textArgs);
 
 	}
 
@@ -62,34 +63,26 @@ var jaksaako = function (usertext) {
 
 var kiitos = function (usertext) {
 
-	var responds = [
-		'ei mitään', 'np', 'Ei tarvitse kiittää'];
-
-	var output = snipToss(responds);
-
-	// add funny emoji :)
 	// check emojis: http://www.emoji-cheat-sheet.com/
 
-	output += ' ' + emoji.get(':blush:');
+	var responds = [
+		'ei mitään ' + emoji.get(':blush:'),
+		'np ' + emoji.get(':blush:'),
+		'Ei tarvitse kiittää ' + emoji.get(':blush:')];
 
-	return output;
+	return snipToss(responds);
 
 }
 
 var sori = function (usertext) {
 
-	var responds = [
-		'Asia on jo käytännössä unohdettu',
-		'Ei tarvitse pyytää anteeksi'];
-
-	var output = snipToss(responds);
-
-	// add funny emoji :)
 	// check emojis: http://www.emoji-cheat-sheet.com/
 
-	output += ' ' + emoji.get(':blush:');
+	var responds = [
+		'Asia on jo käytännössä unohdettu ' + emoji.get(':blush:'),
+		'Ei tarvitse pyytää anteeksi ' + emoji.get(':blush:')];
 
-	return output;
+	return snipToss(responds);
 
 
 }
