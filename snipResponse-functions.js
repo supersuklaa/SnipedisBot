@@ -195,17 +195,16 @@ var mitatapahtuu = function (userdate) {
 
 	// return something (almost) random
 
-	var randomArr = [];
+	var responds = [];
 
 	if (userevents.length > 0) {
 
 		// there might be more than one event per day
 		// so pick one randomly
 
-		var eventKey = Math.floor(Math.random() * userevents.length);
-		var userevent = userevents[eventKey];
+		var userevent = snipToss(userevents);
 
-		randomArr.push(
+		responds.push(
 			'ois ' + userevent + ' mut emt jaksaako',
 			'joku ' + userevent + '? emt kinostaaks',
 			'joku ' + userevent + ' ' + emoji.get(':hankey:') + emoji.get(':hankey:'),
@@ -217,7 +216,7 @@ var mitatapahtuu = function (userdate) {
 
 		// there was no event
 
-		randomArr.push(
+		responds.push(
 			'emt ei mitää kai', 'oisko se kerhotorstai',
 			'ei mitää', 'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
@@ -226,10 +225,7 @@ var mitatapahtuu = function (userdate) {
 
 	}
 
-	var randomKey = Math.floor(Math.random() * randomArr.length);
-	var randomVal = randomArr[randomKey];
-
-	return randomVal;
+	return snipToss(responds);
 
 }
 
@@ -245,14 +241,12 @@ var weed = function () {
 			break;
 
 		default:
-			var randomArr = [
+			var responds = [
 				'Kello on ' + time + ' typerys',
 				'Kello on ' + time + emoji.get(':hankey:'),
 				'Ei vielä' + emoji.get(':hankey:') + ' kello on ' + time];
 
-			var randomKey = Math.floor(Math.random() * randomArr.length);
-
-			return randomArr[randomKey];
+			return snipToss(responds);
 			
 	}
 
