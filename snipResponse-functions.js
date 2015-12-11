@@ -3,7 +3,8 @@ var fs        = require('fs'),
     request   = require('request'),
     calender  = require('./resources/kalenteri'),
     emoji     = require('node-emoji'),
-    moment    = require('moment-timezone');
+    moment    = require('moment-timezone'),
+    snipToss  = require('./snipToss');
 
 moment.tz.setDefault('Europe/Helsinki');
 
@@ -25,10 +26,10 @@ var coinflip = function (usertext) {
 	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
 	if (textsplit.length > 2) textsplit.push('Kaikki', 'emt jaksaaks ny arpoo');
 
-	var randomKey = Math.floor(Math.random() * textsplit.length);
-	var randomVal = textsplit[randomKey];
+	//var randomKey = Math.floor(Math.random() * textsplit.length);
+	//var randomVal = textsplit[randomKey];
 
-	return randomVal;
+	return snipToss(textsplit);
 
 }
 
