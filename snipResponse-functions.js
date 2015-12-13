@@ -19,14 +19,14 @@ var coinflip = function (usertext) {
 
 	usertext = usertext.replace(/,/g, '').replace(/ vai /gi, ' ');
 
-	var textsplit = usertext.split(' ');
+	var choices = usertext.split(' ');
 
 	// add couple of random responses
 
-	if (textsplit.length > 3) textsplit.push('Ei noist mikää');
-	if (textsplit.length > 2) textsplit.push('Kaikki', 'emt jaksaaks ny arpoo');
+	if (choices.length > 3) choices.push('Ei noist mikää');
+	if (choices.length > 2) choices.push('Kaikki', 'emt jaksaaks ny arpoo');
 
-	return snipToss(textsplit);
+	return snipToss(choices);
 
 }
 
