@@ -222,9 +222,9 @@ var mitatapahtuu = function (userdate) {
 
 }
 
-var weed = function () {
+var weed = function (userdate) {
 
-	var time = moment().format('HH:mm');
+	var time = moment.unix(userdate).format('HH:mm');
 
 	switch (time) {
 

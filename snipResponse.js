@@ -51,7 +51,7 @@ module.exports = function (usertext, userdate) {
         break;
 
       case '/420':
-        return snipfunc.weed();
+        return snipfunc.weed(userdate);
         break;
 
       case 'isi ii':
