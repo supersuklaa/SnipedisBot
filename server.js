@@ -29,6 +29,15 @@ app.post('/api/webhook', function (req, res) {
   var username = msg.from.username;
   var usersticker = msg.sticker;
 
+  // If user sends this one specific sticker, bot responds
+  // with same sticker.
+
+  // TODO make everything more beautiful regarding this
+
+  // Snipedi sticker id
+
+  var snipeti_id = 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC';
+
   // prepare the output
 
   var output = {};
@@ -42,7 +51,7 @@ app.post('/api/webhook', function (req, res) {
 
     method = 'sendMessage';
     
-  } else if (usersticker) {
+  } else if (usersticker.file_id == snipeti_id) {
 
     output.chat_id = chat_id;
     output.sticker = usersticker.file_id;
