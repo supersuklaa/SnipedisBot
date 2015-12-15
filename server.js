@@ -32,22 +32,28 @@ app.post('/api/webhook', function (req, res) {
   // prepare the output
 
   var output = {};
+  var method;
 
   if (usertext && snipResponse(usertext, userdate)) {
 
     output.chat_id = chat_id;
     // output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext, userdate);
+
+    method = 'sendMessage';
     
   } else if (usersticker) {
+
     output.chat_id = chat_id;
-    //output.text = 'lol stikkeri';
     output.sticker = usersticker;
+
+    method = 'sendSticker';
+
   }
 
   // output the output
 
-  request.post(botURL + '/sendMessage', {form: output},
+  request.post(botURL + '/' + method, {form: output},
     function (error, response, body) {
       if (!error) {
 
