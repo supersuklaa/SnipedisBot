@@ -41,7 +41,8 @@ app.post('/api/webhook', function (req, res) {
     
   } else if (usersticker) {
     output.chat_id = chat_id;
-    output.text = 'lol stikkeri';
+    //output.text = 'lol stikkeri';
+    output.sticker = usersticker;
   }
 
   // output the output
