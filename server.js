@@ -23,10 +23,11 @@ app.post('/api/webhook', function (req, res) {
 
   console.log(msg);
 
-  var chat_id = msg['chat']['id'];
+  var chat_id = msg.chat.id;
   var usertext = msg.text;
   var userdate = msg.date;
   var username = msg.from.username;
+  var usersticker = msg.sticker;
 
   // prepare the output
 
@@ -38,6 +39,9 @@ app.post('/api/webhook', function (req, res) {
     // output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext, userdate);
     
+  } else if (usersticker) {
+    output.chat_id = chat_id;
+    output.text = 'lol stikkeri';
   }
 
   // output the output
