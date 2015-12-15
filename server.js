@@ -45,7 +45,7 @@ app.post('/api/webhook', function (req, res) {
   } else if (usersticker) {
 
     output.chat_id = chat_id;
-    output.sticker = usersticker;
+    output.sticker = usersticker.file_id;
 
     method = 'sendSticker';
 
