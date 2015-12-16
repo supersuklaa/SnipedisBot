@@ -46,12 +46,11 @@ app.post('/api/webhook', function (req, res) {
   if (usertext && snipResponse(usertext, userdate)) {
 
     output.chat_id = chat_id;
-    // output.text = '@' + username + ': '; // start the 'answer' with '@username: '
     output.text = snipResponse(usertext, userdate);
 
     method = 'sendMessage';
     
-  } else if (usersticker.file_id == snipeti_id) {
+  } else if (usersticker && usersticker.file_id == snipeti_id) {
 
     output.chat_id = chat_id;
     output.sticker = usersticker.file_id;
