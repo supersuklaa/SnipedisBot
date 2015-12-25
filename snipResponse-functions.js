@@ -149,13 +149,13 @@ var mitakaikkee = function (usertext, userdate) {
 
 	if (userevents.length > 0) {
 
-		var userevent, respond;
+		var respond = '';
 
 		for (var i = 0; i < userevents.length; i++) {
 			respond += userevents[i] + ', ';
 		}
 
-		responds.push('no emt, ehk ' + respond);
+		responds.push(respond);
 		return snipToss(responds);
 
 		//return 'lol';
