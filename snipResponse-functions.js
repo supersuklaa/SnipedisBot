@@ -152,13 +152,23 @@ var mitakaikkee = function (usertext, userdate) {
 		var respond = '';
 
 		for (var i = 0; i < userevents.length; i++) {
-			respond += userevents[i] + ', ';
+
+			respond += userevents[i];
+
+			if (i + 2 == userevents.length) {
+				respond += ' ja ';
+				continue;
+			} else if (i + 1 == userevents.length) {
+				break;
+			} else {
+				respond += ', ';
+			}
+
 		}
 
 		responds.push(respond);
-		return snipToss(responds);
 
-		//return 'lol';
+		return snipToss(responds);
 
 	} else {
 
