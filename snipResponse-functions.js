@@ -149,6 +149,9 @@ var mitakaikkee = function (usertext, userdate) {
 
 	if (userevents.length > 0) {
 
+		// playing with loops and clauses
+		// so snipedi can return a sensible list of events
+
 		var respond = '';
 
 		for (var i = 0; i < userevents.length; i++) {
@@ -158,13 +161,18 @@ var mitakaikkee = function (usertext, userdate) {
 			if (i + 2 == userevents.length) {
 				respond += ' ja ';
 				continue;
+
 			} else if (i + 1 == userevents.length) {
 				break;
+
 			} else {
 				respond += ', ';
+				
 			}
 
 		}
+
+		// TODO: get creative with responds
 
 		responds.push(respond);
 
