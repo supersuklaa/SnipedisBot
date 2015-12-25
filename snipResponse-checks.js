@@ -17,6 +17,7 @@ var mikavitun = function (usertext) {
 	usertext = usertext.toLowerCase();
 
 	if (usertext.substring(0, 11) == 'mikä vitun ') return true;
+	else if (usertext.substring(0, 7) == 'selitä ') return true;
 	else return false;
 
 }
