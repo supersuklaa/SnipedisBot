@@ -155,9 +155,10 @@ var mitakaikkee = function (usertext, userdate) {
 			respond += userevents[i] + ', ';
 		}
 
-		responds.push('no emt, ehk ' + respond);
+		//responds.push('no emt, ehk ' + respond);
+		//return snipToss(responds);
 
-		return snipToss(responds);
+		return 'lol';
 
 	} else {
 
