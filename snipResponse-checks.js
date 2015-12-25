@@ -5,7 +5,7 @@ var mitakaikkee = function (usertext) {
 
 	usertext = usertext.toLowerCase();
 
-	if (usertext.substring(0, 12) == 'mitä kaikkee ') return true;
+	if (usertext.substring(0, 13) == 'mitä kaikkee ') return true;
 	else return false;
 
 }
