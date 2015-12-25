@@ -118,6 +118,55 @@ var cam = function () {
 
 */
 
+var mitakaikkee = function (usertext, userdate) {
+
+	// check if there is more than one event on a date
+
+	usertext = usertext.toLowerCase();
+
+	// add one day to userdate if usertext includes 'huomenna'
+
+	if (usertext.indexOf('huomenna') > 0) userdate += 86400;
+	else if (usertext.indexOf('eilen') > 0) userdate -= 86400;
+
+	// change userdate's unixtimestamp -> 'YYYY-MM-DD'
+
+	userdate = moment.unix(userdate).format('YYYY-MM-DD');
+
+	// go through calender and get userdate's event
+
+	var userevents = [];
+
+	for (var i = calender.length - 1; i >= 0; i--) {
+		if (calender[i].date == userdate) {
+			userevents.push(calender[i].name.toLowerCase());
+		}
+	};
+
+	// return something (almost) random
+
+	var responds = [];
+
+	if (userevents.length > 0) {
+
+		var userevent, respond;
+
+		for (var i = 0; i < userevents.length; i++) {
+			respond += userevents[i] + ', ';
+		}
+
+		responds.push('no emt, ehk ' + respond);
+
+		return snipToss(responds);
+
+	} else {
+
+		return 'ei mitään :)';
+
+	}
+
+}
+
 var mikavitun = function (usertext) {
 
 	// just find out if there is description for event
@@ -255,5 +304,6 @@ module.exports = {
 	coinflip: coinflip,
 	kiitos: kiitos,
 	sori: sori,
+	mitakaikkee: mitakaikkee,
 	mikavitun: mikavitun
 }

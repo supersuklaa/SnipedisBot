@@ -22,6 +22,9 @@ module.exports = function (usertext, userdate) {
   } else if (snipcheck.kiitos(usertext)) {
     return snipfunc.kiitos(usertext);
 
+  } else if (snipcheck.mitakaikkee(usertext)) {
+    return snipfunc.mitakaikkee(usertext, userdate);
+
   } else if (snipcheck.mikavitun(usertext)) {
     return snipfunc.mikavitun(usertext);
 

@@ -1,4 +1,15 @@
 
+var mitakaikkee = function (usertext) {
+
+	// check if usertext starts with 'mitä kaikkee'
+
+	usertext = usertext.toLowerCase();
+
+	if (usertext.substring(0, 12) == 'mitä kaikkee ') return true;
+	else return false;
+
+}
+
 var mikavitun = function (usertext) {
 
 	// check if usertext starts with 'mikä vitun'
@@ -100,6 +111,7 @@ var jaksaako = function (usertext) {
 module.exports = {
 	jaksaako: jaksaako,
 	coinflip: coinflip,
+	mitakaikkee: mitakaikkee,
 	kiitos: kiitos,
 	sori: sori,
 	mikavitun: mikavitun
