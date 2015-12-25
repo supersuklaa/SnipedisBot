@@ -23,7 +23,7 @@ module.exports = function (usertext, userdate) {
     return snipfunc.kiitos(usertext);
 
   } else if (snipcheck.mitakaikkee(usertext)) {
-    return 'moi'; //snipfunc.mitakaikkee(usertext, userdate);
+    return snipfunc.mitakaikkee(usertext, userdate);
 
   } else if (snipcheck.mikavitun(usertext)) {
     return snipfunc.mikavitun(usertext);
