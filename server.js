@@ -36,7 +36,10 @@ app.post('/api/webhook', function (req, res) {
 
   // Snipedi sticker id
 
-  var snipeti_id = 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC';
+  var snipeti_sticker = {
+    snap: 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC',
+    bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAq',
+}
 
   // prepare the output
 
@@ -50,10 +53,15 @@ app.post('/api/webhook', function (req, res) {
 
     method = 'sendMessage';
     
-  } else if (usersticker && usersticker.file_id == snipeti_id) {
+  } else if (usersticker) {
 
     output.chat_id = chat_id;
-    output.sticker = usersticker.file_id;
+
+    if (usersticker.file_id == snipeti_sticker.snap) {
+      output.sticker = usersticker.file_id;
+    } else {
+      output.sticker = snipeti_sticker.bob;
+    }
 
     method = 'sendSticker';
 
