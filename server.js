@@ -38,7 +38,7 @@ app.post('/api/webhook', function (req, res) {
 
   var snipeti_sticker = {
     snap: 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC',
-    bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAq',
+    bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAg',
 }
 
   // prepare the output
