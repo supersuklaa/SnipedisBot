@@ -241,7 +241,6 @@ var mitatapahtuu = function (userdate) {
 	// find out if there is a corresponding event for userdate
 
 	var weekday = moment.unix(userdate).weekday();
-	console.log(weekday);
 
 	// change userdate's unixtimestamp -> 'YYYY-MM-DD'
 
@@ -256,6 +255,8 @@ var mitatapahtuu = function (userdate) {
 			userevents.push(calender[i].name.toLowerCase());
 		}
 	};
+
+	if (weekday == 4) userevents.push('kerhotorstai');
 
 	// return something (almost) random
 
@@ -281,7 +282,7 @@ var mitatapahtuu = function (userdate) {
 		// there was no event
 
 		responds.push(
-			'emt ei mitää kai', 'oisko se kerhotorstai',
+			'emt ei mitää kai',
 			'ei mitää', 'emt', 'ensin palautus sitten pajautus',
 			'vois nukkuu? tai emt jaksaaks',
 			'kapinassa vois käyä muljulla jos jaksaa',
