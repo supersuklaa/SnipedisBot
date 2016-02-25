@@ -50,6 +50,7 @@ module.exports = function (usertext, userdate) {
       case 'ime kullii':
       case 'ime kikkii':
       case 'mee roskii':
+      case 'kerro satu':
         return 'e';
         break;
 
