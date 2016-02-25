@@ -240,6 +240,9 @@ var mitatapahtuu = function (userdate) {
 
 	// find out if there is a corresponding event for userdate
 
+	var weekday = moment.unix(userdate).weekday();
+	console.log(weekday);
+
 	// change userdate's unixtimestamp -> 'YYYY-MM-DD'
 
 	userdate = moment.unix(userdate).format('YYYY-MM-DD');
