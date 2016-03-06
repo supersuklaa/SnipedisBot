@@ -28,6 +28,9 @@ module.exports = function (usertext, userdate) {
   } else if (snipcheck.mikavitun(usertext)) {
     return snipfunc.mikavitun(usertext);
 
+  } else if (snipcheck.milloin(usertext)) {
+    return snipfunc.milloin(usertext);
+
   } else {
 
     // responds which don't require analyzing of usertext
