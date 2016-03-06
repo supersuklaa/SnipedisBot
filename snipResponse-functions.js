@@ -100,23 +100,32 @@ var bobross = function () {
 
 }
 
-/*
+var milloin = function (usertext) {
 
-	T O D O ! !
+	// just find out if date for event
 
+	usertext = usertext.toLowerCase();
 
-var cam = function () {
+	// go through calender and find event and date
 
-	var camurl = 'http://tietojohtajakilta.net/webcam/cam_1.jpg';
-	var camfile = 'cam.jpg';
+	var eventdate, userevent;
 
-	request(camurl).pipe(fs.createWriteStream(camfile));
+	for (var i = calender.length - 1; i >= 0; i--) {
+		if (usertext.indexOf(calender[i].name.toLowerCase()) > 0) {
+			userevent = calender[i].name;
+			eventdate = calender[i].date;
 
-	return camfile;
+			break; // stop looping after date is found
+		}
+	};
+
+	if (userevent) {
+		return userevent + ' on ' + eventdate;
+	} else {
+		return 'emt ei oo kerrottu';
+	}
 
 }
-
-*/
 
 var mitakaikkee = function (usertext, userdate) {
 
@@ -328,5 +337,6 @@ module.exports = {
 	kiitos: kiitos,
 	sori: sori,
 	mitakaikkee: mitakaikkee,
+	milloin: milloin,
 	mikavitun: mikavitun
 }

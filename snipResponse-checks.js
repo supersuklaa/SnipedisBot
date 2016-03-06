@@ -1,3 +1,13 @@
+var milloin = function (usertext) {
+
+	// check if usertext starts with 'milloin on'
+
+	usertext = usertext.toLowerCase();
+
+	if (usertext.substring(0, 11) == 'milloin on ') return true;
+	else return false;
+
+}
 
 var mitakaikkee = function (usertext) {
 
@@ -115,5 +125,6 @@ module.exports = {
 	mitakaikkee: mitakaikkee,
 	kiitos: kiitos,
 	sori: sori,
+	milloin: milloin,
 	mikavitun: mikavitun
 }
