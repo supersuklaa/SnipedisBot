@@ -76,6 +76,10 @@ module.exports = function (usertext, userdate) {
         return 'Keitä ite.';
         break;
 
+      case 'lol':
+        return 'lol';
+        break;
+
       case 'mitä tänää':
       case 'mitä tänään':
         return snipfunc.mitatapahtuu(userdate);
