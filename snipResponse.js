@@ -57,6 +57,10 @@ module.exports = function (usertext, userdate) {
         return 'e';
         break;
 
+      case 'ensin palautus':
+        return 'sitten pajautus';
+        break;
+
       case '/420':
         return snipfunc.weed(userdate);
         break;
