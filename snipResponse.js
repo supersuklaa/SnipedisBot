@@ -19,6 +19,9 @@ module.exports = function (usertext, userdate) {
   } else if (snipcheck.sori(usertext)) {
     return snipfunc.sori(usertext);
 
+  } else if (snipcheck.ensin(usertext)) {
+    return snipfunc.ensin(usertext);
+
   } else if (snipcheck.kiitos(usertext)) {
     return snipfunc.kiitos(usertext);
 
@@ -55,10 +58,6 @@ module.exports = function (usertext, userdate) {
       case 'mee roskii':
       case 'kerro satu':
         return 'e';
-        break;
-
-      case 'ensin palautus':
-        return 'sitten pajautus';
         break;
 
       case '/420':

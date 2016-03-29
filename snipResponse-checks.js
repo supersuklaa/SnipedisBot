@@ -70,6 +70,21 @@ var sori = function (usertext) {
 	}
 }
 
+var ensin = function (usertext) {
+
+	// check if usertext starts with 'kiitos' or something like that
+
+	var textsplit = usertext.split(' ');
+	var firstword = textsplit[0].toLowerCase();
+
+	if (firstword == 'ensin' && textsplit.length > 1) {
+
+		return true;
+
+	}
+
+	return false;
+}
 
 var kiitos = function (usertext) {
 
@@ -126,5 +141,6 @@ module.exports = {
 	kiitos: kiitos,
 	sori: sori,
 	milloin: milloin,
-	mikavitun: mikavitun
+	mikavitun: mikavitun,
+	ensin: ensin
 }

@@ -74,6 +74,12 @@ var kiitos = function (usertext) {
 
 }
 
+var ensin = function (usertext) {
+
+	return 'sitten pajautus';
+
+}
+
 var sori = function (usertext) {
 
 	// check emojis: http://www.emoji-cheat-sheet.com/
@@ -338,5 +344,6 @@ module.exports = {
 	sori: sori,
 	mitakaikkee: mitakaikkee,
 	milloin: milloin,
-	mikavitun: mikavitun
+	mikavitun: mikavitun,
+	ensin: ensin
 }
