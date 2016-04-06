@@ -133,6 +133,19 @@ var milloin = function (usertext) {
 
 }
 
+var iltaa = function () {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var responds = [
+		'iltaa', 'moro', 'Moro!',
+		'iltua'];
+
+	return snipToss(responds);
+
+}
+
 var mitakaikkee = function (usertext, userdate) {
 
 	// check if there is more than one event on a date
@@ -336,6 +349,7 @@ var weed = function (userdate) {
 
 module.exports = {
 	weed: weed,
+	iltaa: iltaa,
 	mitatapahtuu: mitatapahtuu,
 	jaksaako: jaksaako,
 	bobross: bobross,

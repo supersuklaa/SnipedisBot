@@ -84,7 +84,7 @@ module.exports = function (usertext, userdate) {
         break;
 
       case 'iltaa':
-        return 'iltaa';
+        return snipfunc.iltaa();
         break;
 
       case 'mitä tänää':
