@@ -140,7 +140,8 @@ var iltaa = function () {
 
 	var responds = [
 		'iltaa', 'moro', 'Moro!', 'iltamia', 'Moro',
-		'iltua', 'iltumia', 'illuttia', 'iltuuta'];
+		'iltua', 'iltumia', 'illuttia', 'iltuuta',
+		'iltamia', 'iltuu'];
 
 	return snipToss(responds);
 
