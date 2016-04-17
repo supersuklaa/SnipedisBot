@@ -77,7 +77,7 @@ app.post('/api/webhook', function (req, res) {
 
         res.status(200).send({});
 
-        console.log(output);
+        console.log(body);
 
       } else {
 
