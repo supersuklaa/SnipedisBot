@@ -1,9 +1,10 @@
 
-var express        = require('express');
-var bodyParser     = require('body-parser');
-var request        = require('request');
+var express      = require('express');
+var bodyParser   = require('body-parser');
+var request      = require('request');
 
-var snipResponse   = require('./snipResponse');
+var snipResponse = require('./snipResponse');
+var snipToss     = require('./snipToss');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.post('/api/webhook', function (req, res) {
 
   var snipeti_sticker = {
     snap: 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC',
+    snap2: 'AAQEABPrdyQZAARw7_pIUdP89qk2AAIC',
     bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAg',
   }
 
@@ -57,11 +59,11 @@ app.post('/api/webhook', function (req, res) {
 
     output.chat_id = chat_id;
 
-    if (usersticker.file_id == snipeti_sticker.snap) {
-      output.sticker = usersticker.file_id;
-    } else {
-      output.sticker = snipeti_sticker.bob;
-    }
+    output.sticker = snipToss([
+      snipeti_sticker.snap,
+      snipeti_sticker.snap2,
+      snipeti_sticker.bob
+    ]);
 
     method = 'sendSticker';
 
