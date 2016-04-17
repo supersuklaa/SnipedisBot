@@ -39,7 +39,7 @@ app.post('/api/webhook', function (req, res) {
 
   var snipeti_sticker = {
     snap: 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC',
-    snap2: 'AAQEABPrdyQZAARw7_pIUdP89qk2AAIC',
+    snapW: 'AAQEABPrdyQZAARw7_pIUdP89qk2AAIC',
     bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAg',
   }
 
@@ -61,7 +61,7 @@ app.post('/api/webhook', function (req, res) {
 
     output.sticker = snipToss([
       snipeti_sticker.snap,
-      snipeti_sticker.snap2,
+      snipeti_sticker.snapW,
       snipeti_sticker.bob
     ]);
 
