@@ -124,6 +124,7 @@ var jaksaako = function (usertext) {
 		case 'jaksasko':
 		case 'jaksaaks':
 		case 'jaksaispa':
+		case 'jaksaneeko':
 			return true;
 			break;
 
