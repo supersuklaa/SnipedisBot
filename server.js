@@ -42,22 +42,23 @@ app.post('/api/webhook', function (req, res) {
 
     method = 'sendMessage';
     
-  }
+    // output the output
 
-  // output the output
+    request.post(botURL + '/' + method, {form: output},
+      function (error, response, body) {
+        if (!error) {
 
-  request.post(botURL + '/' + method, {form: output},
-    function (error, response, body) {
-      if (!error) {
+          console.log(body);
 
-        console.log(body);
+        } else {
 
-      } else {
+          console.log(error);
 
-        console.log(error);
-
+        }
       }
-    });
+    );
+    
+  }
 
   res.status(200).send({})
 
