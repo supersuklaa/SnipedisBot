@@ -24,26 +24,13 @@ app.post('/api/webhook', function (req, res) {
 
   console.log(msg);
 
-  var chat_id = msg.chat.id;
-  var usertext = msg.text;
-  var userdate = msg.date;
-  var username = msg.from.username;
-  var usersticker = msg.sticker;
-
-  // If user sends this one specific sticker, bot responds
-  // with same sticker.
-
-  // TODO make everything more beautiful regarding this
-
-  /* Snipedi sticker id
-
-  var snipeti_sticker = {
-    snap: 'BQADAgADzwoAAh1J_wABFyAPIKIKFDoC',
-    snapW: 'BQADBAADhQADvRH2A8K1bapxFDbyAg',
-    bob: 'BQADBAADxQADCqTnBCN8rYVK5VThAg'
-  }*/
-
-  // prepare the output
+  if (msg) {
+    var chat_id = msg.chat.id;
+    var usertext = msg.text;
+    var userdate = msg.date;
+    var username = msg.from.username;
+    var usersticker = msg.sticker;
+  }
 
   var output = {};
   var method;
@@ -63,18 +50,16 @@ app.post('/api/webhook', function (req, res) {
     function (error, response, body) {
       if (!error) {
 
-        res.status(200).send({});
-
         console.log(body);
 
       } else {
-
-        res.status(500).send({});
 
         console.log(error);
 
       }
     });
+
+  res.status(200).send({})
 
 });
 
