@@ -34,6 +34,9 @@ module.exports = function (usertext, userdate) {
   } else if (snipcheck.milloin(usertext)) {
     return snipfunc.milloin(usertext);
 
+  } else if (snipcheck.benis(usertext)) {
+    return snipfunc.benis(usertext);
+
   } else {
 
     // responds which don't require analyzing of usertext

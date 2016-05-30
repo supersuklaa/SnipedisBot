@@ -147,6 +147,19 @@ var iltaa = function () {
 
 }
 
+var benis = function () {
+
+	// just picks one value from the 'randomArr' array
+	// and returns it
+
+	var responds = [
+		':D', ':DDDDd', '>:D', ':DDDDDDD', 'BENIS :D :D',
+		':DDD BENIS'];
+
+	return snipToss(responds);
+
+}
+
 var mitakaikkee = function (usertext, userdate) {
 
 	// check if there is more than one event on a date
@@ -360,5 +373,6 @@ module.exports = {
 	mitakaikkee: mitakaikkee,
 	milloin: milloin,
 	mikavitun: mikavitun,
-	ensin: ensin
+	ensin: ensin,
+	benis: benis
 }

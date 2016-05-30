@@ -9,6 +9,17 @@ var milloin = function (usertext) {
 
 }
 
+var benis = function (usertext) {
+
+	// check if usertext starts with 'benis'
+
+	usertext = usertext.toLowerCase();
+
+	if (usertext.substring(0, 5) == 'benis') return true;
+	else return false;
+
+}
+
 var mitakaikkee = function (usertext) {
 
 	// check if usertext starts with 'mitä kaikkee'
@@ -145,5 +156,6 @@ module.exports = {
 	sori: sori,
 	milloin: milloin,
 	mikavitun: mikavitun,
-	ensin: ensin
+	ensin: ensin,
+	benis: benis
 }
