@@ -15,7 +15,7 @@ var juurinyt = function () {
 
 	url = 'http://www.iltalehti.fi/';
 
-	return request(url, function(error, response, html) {
+	var parser = function(error, response, html) {
 		if(!error){
 
 			var $ = cheerio.load(html);
@@ -29,8 +29,10 @@ var juurinyt = function () {
 
 		return "<b>JUURI NYT:</b> " + snipToss(output);
 
-	});
+	}
 
+
+	return request(url, parser);
 }
 
 var coinflip = function (usertext) {
