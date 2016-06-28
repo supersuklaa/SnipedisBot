@@ -21,9 +21,11 @@ var juurinyt = function (callback) {
 			var $ = cheerio.load(html);
 
 			$( ".juurinyt > p > a" ).each(function( index ) {
-				console.log( index + ": " + $( this ).text() );
+				//console.log( index + ": " + $( this ).text() );
 				output.push($( this ).text());
 			});
+
+			console.log(output);
 
 		}
 
