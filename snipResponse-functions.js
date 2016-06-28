@@ -32,7 +32,7 @@ var juurinyt = function () {
 	}
 
 
-	return request(url, parser);
+	return "moi";// request(url, parser);
 }
 
 var coinflip = function (usertext) {
