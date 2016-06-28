@@ -9,13 +9,13 @@ var fs        = require('fs'),
 
 moment.tz.setDefault('Europe/Helsinki');
 
-var juurinyt = function () {
+var juurinyt = function (callback) {
 
 	var output = [];
 
 	url = 'http://www.iltalehti.fi/';
 
-	var parser = function(error, response, html) {
+	request(url, function(error, response, html) {
 		if(!error){
 
 			var $ = cheerio.load(html);
@@ -27,12 +27,10 @@ var juurinyt = function () {
 
 		}
 
-		return "<b>JUURI NYT:</b> " + snipToss(output);
+		callback(snipToss(output));
 
-	}
+	});
 
-
-	return "moi";// request(url, parser);
 }
 
 var coinflip = function (usertext) {
