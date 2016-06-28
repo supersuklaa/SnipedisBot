@@ -4,9 +4,33 @@ var fs        = require('fs'),
     calender  = require('./resources/kalenteri'),
     emoji     = require('node-emoji'),
     moment    = require('moment-timezone'),
+    cheerio   = require('cheerio'),
     snipToss  = require('./snipToss');
 
 moment.tz.setDefault('Europe/Helsinki');
+
+var juurinyt = function () {
+
+	var output = [];
+
+	url = 'http://www.iltalehti.fi/';
+
+	request(url, function(error, response, html) {
+		if(!error){
+
+			var $ = cheerio.load(html);
+
+			$( ".juurinyt > p > a" ).each(function( index ) {
+				console.log( index + ": " + $( this ).text() );
+				output.push($( this ).text());
+			});
+
+		}
+	});
+
+	return "JUURI NYT: " + snipToss(output);
+
+}
 
 var coinflip = function (usertext) {
 
@@ -374,5 +398,6 @@ module.exports = {
 	milloin: milloin,
 	mikavitun: mikavitun,
 	ensin: ensin,
-	benis: benis
+	benis: benis,
+	juurinyt: juurinyt
 }
