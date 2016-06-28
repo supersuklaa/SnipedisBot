@@ -13,25 +13,23 @@ var juurinyt = function () {
 
 	var output = [];
 
-	url = 'http://www.iltalehti.fi/tuoreimmatuutiset/';
+	url = 'http://www.iltalehti.fi/';
 
 	request(url, function(error, response, html) {
 		if(!error){
 
 			var $ = cheerio.load(html);
 
-			$( "#tuoreimmat > p > a" ).each(function( index ) {
-				
-				output.push($( this ).text());
+			$( ".juurinyt > p > a" ).each(function( index ) {
 				console.log( index + ": " + $( this ).text() );
-
+				output.push($( this ).text());
 			});
 
 		}
+
+		return "<b>JUURI NYT:</b> " + snipToss(output);
+
 	});
-
-	return "JUURI NYT: " + snipToss(output);
-
 }
 
 var coinflip = function (usertext) {

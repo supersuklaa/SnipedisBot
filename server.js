@@ -39,6 +39,7 @@ app.post('/api/webhook', function (req, res) {
 
     output.chat_id = chat_id;
     output.text = snipResponse(usertext, userdate);
+    output.parse_mode = 'HTML';
 
     method = 'sendMessage';
     
