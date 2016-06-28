@@ -13,14 +13,14 @@ var juurinyt = function () {
 
 	var output = [];
 
-	url = 'http://www.iltalehti.fi/';
+	url = 'http://www.iltalehti.fi/tuoreimmatuutiset/';
 
 	request(url, function(error, response, html) {
 		if(!error){
 
 			var $ = cheerio.load(html);
 
-			$( ".juurinyt > p > a" ).each(function( index ) {
+			$( "#tuoreimmat > p > a" ).each(function( index ) {
 				console.log( index + ": " + $( this ).text() );
 				output.push($( this ).text());
 			});
