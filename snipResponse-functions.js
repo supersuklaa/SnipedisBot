@@ -21,8 +21,10 @@ var juurinyt = function () {
 			var $ = cheerio.load(html);
 
 			$( "#tuoreimmat > p > a" ).each(function( index ) {
-				console.log( index + ": " + $( this ).text() );
+				
 				output.push($( this ).text());
+				console.log( index + ": " + $( this ).text() );
+
 			});
 
 		}
