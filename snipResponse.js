@@ -4,7 +4,7 @@ var snipcheck = require('./snipResponse-checks'), // response checks
 
 module.exports = function (msg, cb) { 
 
-  if (!msg) {
+  if (!msg OR !msg.text) {
     cb(false, true);
     return;
   }
