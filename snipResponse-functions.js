@@ -36,11 +36,11 @@ var juurinyt_crawl = function (callback) {
 var juurinyt = function () {
 
 	var output = juurinyt_crawl(function(titles) {
-		return titles;
+		return "titles";
 	});
 
 	console.log("moi");
-	console.log(output);
+	console.log(output());
 
 	return output;
 
