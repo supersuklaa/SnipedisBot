@@ -1,10 +1,11 @@
 
 var fs        = require('fs'),
-    request   = require('request'),
-    calender  = require('./resources/kalenteri'),
     emoji     = require('node-emoji'),
+    iconv     = require('iconv-lite'),
     moment    = require('moment-timezone'),
     cheerio   = require('cheerio'),
+    request   = require('request'),
+    calender  = require('./resources/kalenteri'),
     snipToss  = require('./snipToss');
 
 moment.tz.setDefault('Europe/Helsinki');
@@ -15,10 +16,11 @@ var juurinyt = function (callback) {
 
 	url = 'http://www.iltalehti.fi/tuoreimmatuutiset/';
 
-	request({uri: url, encoding: 'utf-8'}, function(error, response, html) {
+	request({uri: url, encoding: null}, function(error, response, html) {
 
 		if(!error){
 
+			html = iconv.decode(new Buffer(html), "ISO-8859-1");
 			var $ = cheerio.load(html);
 
 			$( "#tuoreimmat > p:nth-child(2) > a:nth-child(1)" ).each( function() {
