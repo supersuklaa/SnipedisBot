@@ -2,7 +2,18 @@
 var snipcheck = require('./snipResponse-checks'), // response checks
     snipfunc  = require('./snipResponse-functions'); // response functions
 
-module.exports = function (usertext, userdate) { 
+module.exports = function (msg, cb) { 
+
+  if (!msg) {
+    cb(false, true);
+    return;
+  } else {
+    cb({
+      "chat_id": msg.chat.id,
+      "text": "moro"
+    }, false);
+    return;
+  }
 
   usertext = usertext.replace(/@snipedisbot/gi, '');
   usertext = usertext.replace(/\?/gi, ''); // TODO: onko tämä hyvä ?

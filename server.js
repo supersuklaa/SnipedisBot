@@ -23,7 +23,20 @@ app.post('/api/webhook', function (req, res) {
   var msg = req.body.message;
 
   console.log(msg);
-
+  snipResponse(msg, function(ans, err) {
+    if (!err) {
+      request.post(botURL + '/sendMessage', {form: ans},
+        function (error, response, body) {
+          if (!error) {
+            console.log(body);
+          } else {
+            console.log(error);
+          }
+        }
+      );
+    }
+  });
+/*
   if (msg) {
     var chat_id = msg.chat.id;
     var usertext = msg.text;
@@ -60,7 +73,7 @@ app.post('/api/webhook', function (req, res) {
     );
     
   }
-
+*/
   res.status(200).send({})
 
 });
