@@ -119,8 +119,8 @@ module.exports = function (msg, cb) {
         snipfunc.juurinyt(function(aihe) {
           cb({
             "chat_id": msg.chat.id,
-            "parse_mode" = "HTML",
-            "text": "JUURI NYT: " + aihe
+            "parse_mode": "HTML",
+            "text": "<b>JUURI NYT</b>: " + aihe
           }, false);
         });
         return;
