@@ -27,9 +27,10 @@ var juurinyt_crawl = function (callback) {
 
 		}
 
-		callback(output);
-
 	});
+
+	callback(output);
+
 }
 
 var juurinyt = function () {
