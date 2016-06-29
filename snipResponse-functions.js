@@ -13,7 +13,7 @@ var juurinyt = function (callback) {
 
 	var output = ['eih'];
 
-	url = 'http://www.iltalehti.fi/';
+	url = 'http://www.iltalehti.fi/tuoreimmatuutiset/';
 
 	request({uri: url, encoding: 'utf-8'}, function(error, response, html) {
 
@@ -21,7 +21,7 @@ var juurinyt = function (callback) {
 
 			var $ = cheerio.load(html);
 
-			$( ".juurinyt > p > a" ).each( function() {
+			$( "#tuoreimmat > p:nth-child(2) > a:nth-child(1)" ).each( function() {
 				output.push($( this ).text());
 			});
 
