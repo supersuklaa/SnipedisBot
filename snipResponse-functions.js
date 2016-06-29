@@ -39,6 +39,8 @@ var juurinyt = function (cb) {
 
 	cb(out);
 
+	console.log(out);
+
 }
 
 var coinflip = function (usertext) {
