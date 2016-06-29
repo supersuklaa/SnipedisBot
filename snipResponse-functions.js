@@ -28,14 +28,14 @@ var juurinyt = function (callback) {
 			});
 
 			if (output.length < 1) {
-				$(" #iltab_luetuimmat-kaikki1 > p:nth-child(1) > a:nth-child(1) > span:nth-child(2)" ).each( function() {
+				$(" #iltab_luetuimmat-kaikki1 > p > a > span:nth-child(2)" ).each( function() {
 					output.push($( this ).text());
 				});
 			}
 
 		}
 
-		callback(output[output.length - 1]);
+		callback(snipToss(output));
 
 	});
 
