@@ -16,20 +16,18 @@ var juurinyt = function (callback) {
 	url = 'http://www.iltalehti.fi/';
 
 	request(url, function(error, response, html) {
+
 		if(!error){
 
 			var $ = cheerio.load(html);
 
-			$( ".juurinyt > p > a" ).each(function( index ) {
-				//console.log( index + ": " + $( this ).text() );
+			$( ".juurinyt > p > a" ).each( function() {
 				output.push($( this ).text());
 			});
 
-			console.log(output);
-
 		}
 
-		callback(snipToss(output));
+		callback(output);
 
 	});
 
