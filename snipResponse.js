@@ -102,9 +102,7 @@ module.exports = function (usertext, userdate) {
         break;
 
       case 'mitä juuri nyt':
-        return snipfunc.juurinyt(function(aihe) {
-          return "JUURI NYT: " + aihe;
-        });
+        return snipfunc.juurinyt();
         break;
 
       case 'mitä huomenna':

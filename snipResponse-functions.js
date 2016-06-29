@@ -9,7 +9,16 @@ var fs        = require('fs'),
 
 moment.tz.setDefault('Europe/Helsinki');
 
-var juurinyt = function (callback) {
+var juurinyt = function () {
+
+	var output = juurinyt_crawl(function(titles) {
+		return titles;
+	});
+
+	return output;
+}
+
+var juurinyt_crawl = function (callback) {
 
 	var output = [];
 
@@ -30,7 +39,6 @@ var juurinyt = function (callback) {
 		callback(output);
 
 	});
-
 }
 
 var coinflip = function (usertext) {
