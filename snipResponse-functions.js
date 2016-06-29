@@ -15,7 +15,11 @@ var juurinyt = function () {
 		return titles;
 	});
 
+	console.log("moi");
+	console.log(output);
+
 	return output;
+
 }
 
 var juurinyt_crawl = function (callback) {
