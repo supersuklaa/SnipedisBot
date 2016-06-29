@@ -9,7 +9,7 @@ var fs        = require('fs'),
 
 moment.tz.setDefault('Europe/Helsinki');
 
-var juurinyt_crawl = function (callback) {
+var juurinyt = function (callback) {
 
 	var output = ['eih'];
 
@@ -27,19 +27,9 @@ var juurinyt_crawl = function (callback) {
 
 		}
 
+		callback(output[output.length - 1]);
+
 	});
-
-	callback(output);
-
-}
-
-var juurinyt = function (cb) {
-
-	var out = "moro";
-
-	cb(out);
-
-	console.log(out);
 
 }
 

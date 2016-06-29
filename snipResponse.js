@@ -7,13 +7,16 @@ module.exports = function (msg, cb) {
   if (!msg) {
     cb(false, true);
     return;
-  } else {
+  } /*else {
     cb({
       "chat_id": msg.chat.id,
       "text": "moro"
     }, false);
     return;
-  }
+  }*/
+
+  var usertext = msg.text;
+  var sniptext = '';
 
   usertext = usertext.replace(/@snipedisbot/gi, '');
   usertext = usertext.replace(/\?/gi, ''); // TODO: onko tämä hyvä ?
@@ -22,31 +25,31 @@ module.exports = function (msg, cb) {
   // check if usertext needs a closer look
 
   if (snipcheck.coinflip(usertext)) {
-    return snipfunc.coinflip(usertext);
+    sniptext = snipfunc.coinflip(usertext);
 
   } else if (snipcheck.jaksaako(usertext)) {
-    return snipfunc.jaksaako(usertext);
+    sniptext = snipfunc.jaksaako(usertext);
 
   } else if (snipcheck.sori(usertext)) {
-    return snipfunc.sori(usertext);
+    sniptext = snipfunc.sori(usertext);
 
   } else if (snipcheck.ensin(usertext)) {
-    return snipfunc.ensin(usertext);
+    sniptext = snipfunc.ensin(usertext);
 
   } else if (snipcheck.kiitos(usertext)) {
-    return snipfunc.kiitos(usertext);
+    sniptext = snipfunc.kiitos(usertext);
 
   } else if (snipcheck.mitakaikkee(usertext)) {
-    return snipfunc.mitakaikkee(usertext, userdate);
+    sniptext = snipfunc.mitakaikkee(usertext, userdate);
 
   } else if (snipcheck.mikavitun(usertext)) {
-    return snipfunc.mikavitun(usertext);
+    sniptext = snipfunc.mikavitun(usertext);
 
   } else if (snipcheck.milloin(usertext)) {
-    return snipfunc.milloin(usertext);
+    sniptext = snipfunc.milloin(usertext);
 
   } else if (snipcheck.benis(usertext)) {
-    return snipfunc.benis(usertext);
+    sniptext = snipfunc.benis(usertext);
 
   } else {
 
@@ -59,11 +62,11 @@ module.exports = function (msg, cb) {
       case 'millon juilia saa hävetä':
       case 'millon juilia voi hävetä':
       case 'millon juilia pitää hävetä':
-        return 'Aina.';
+        sniptext = 'Aina.';
         break;
 
       case '/bobross':
-        return snipfunc.bobross();
+        sniptext = snipfunc.bobross();
         break;
 
       case 'tee jotai':
@@ -71,30 +74,30 @@ module.exports = function (msg, cb) {
       case 'ime kikkii':
       case 'mee roskii':
       case 'kerro satu':
-        return 'e';
+        sniptext = 'e';
         break;
 
       case '/420':
-        return snipfunc.weed(userdate);
+        sniptext = snipfunc.weed(userdate);
         break;
 
       case 'isi ii':
       case 'easy e':
       case 'easy-e':
-        return 'C-P-T';
+        sniptext = 'C-P-T';
         break;
 
       case 'ou gii':
       case 'og':
-        return 'straight from da otherside';
+        sniptext = 'straight from da otherside';
         break;
 
       case '/kahvutti':
-        return 'Keitä ite.';
+        sniptext = 'Keitä ite.';
         break;
 
       case 'lol':
-        return 'lol';
+        sniptext = 'lol';
         break;
 
       case 'iltaa':
@@ -104,29 +107,38 @@ module.exports = function (msg, cb) {
       case 'moro':
       case 'illuttia':
       case 'iltamia':
-        return snipfunc.iltaa();
+        sniptext = snipfunc.iltaa();
         break;
 
       case 'mitä tänää':
       case 'mitä tänään':
-        return snipfunc.mitatapahtuu(userdate);
+        sniptext = snipfunc.mitatapahtuu(userdate);
         break;
 
       case 'mitä juuri nyt':
         snipfunc.juurinyt(function(aihe) {
-          return "JUURI NYT: " + aihe;
+          cb({
+            "chat_id": msg.chat.id,
+            "text": "JUURI NYT: " + aihe
+          }, false);
         });
+        return;
         break;
 
       case 'mitä huomenna':
-        return snipfunc.mitatapahtuu(userdate + 86400); // seconds in 1 day
+        sniptext = snipfunc.mitatapahtuu(userdate + 86400); // seconds in 1 day
         break;
 
       default:
-        return null;
+        sniptext = '';
 
     }
 
   }
+
+  cb({
+    "chat_id": msg.chat.id,
+    "text": sniptext
+  }, false);
 
 }
