@@ -12,9 +12,9 @@ moment.tz.setDefault('Europe/Helsinki');
 
 var juurinyt = function (callback) {
 
-	var output = ['eih'];
+	var output = [];
 
-	url = 'http://www.iltalehti.fi/tuoreimmatuutiset/';
+	url = 'http://www.iltalehti.fi/';
 
 	request({uri: url, encoding: null}, function(error, response, html) {
 
@@ -22,10 +22,16 @@ var juurinyt = function (callback) {
 
 			html = iconv.decode(new Buffer(html), "ISO-8859-1");
 			var $ = cheerio.load(html);
-
+			
 			$( "#tuoreimmat > p:nth-child(2) > a:nth-child(1)" ).each( function() {
 				output.push($( this ).text());
 			});
+
+			if (output.length < 1) {
+				$(" #iltab_luetuimmat-kaikki1 > p:nth-child(1) > a:nth-child(1) > span:nth-child(2)" ).each( function() {
+					output.push($( this ).text());
+				});
+			}
 
 		}
 
