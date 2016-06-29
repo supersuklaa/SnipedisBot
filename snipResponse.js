@@ -7,13 +7,7 @@ module.exports = function (msg, cb) {
   if (!msg) {
     cb(false, true);
     return;
-  } /*else {
-    cb({
-      "chat_id": msg.chat.id,
-      "text": "moro"
-    }, false);
-    return;
-  }*/
+  }
 
   var usertext = msg.text;
   var sniptext = '';

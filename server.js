@@ -36,44 +36,7 @@ app.post('/api/webhook', function (req, res) {
       );
     }
   });
-/*
-  if (msg) {
-    var chat_id = msg.chat.id;
-    var usertext = msg.text;
-    var userdate = msg.date;
-    var username = msg.from.username;
-    var usersticker = msg.sticker;
-  }
-
-  var output = {};
-  var method;
-
-  if (usertext && snipResponse(usertext, userdate)) {
-
-    output.chat_id = chat_id;
-    output.text = snipResponse(usertext, userdate);
-    output.parse_mode = 'HTML';
-
-    method = 'sendMessage';
-    
-    // output the output
-
-    request.post(botURL + '/' + method, {form: output},
-      function (error, response, body) {
-        if (!error) {
-
-          console.log(body);
-
-        } else {
-
-          console.log(error);
-
-        }
-      }
-    );
-    
-  }
-*/
+  
   res.status(200).send({})
 
 });

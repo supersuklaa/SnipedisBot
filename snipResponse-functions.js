@@ -28,6 +28,7 @@ var juurinyt = function (callback) {
 			});
 
 			if (output.length < 1) {
+				
 				$(" #iltab_luetuimmat-kaikki1 > p > a > span:nth-child(2)" ).each( function() {
 					output.push($( this ).text());
 				});
