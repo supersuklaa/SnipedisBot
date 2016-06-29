@@ -14,7 +14,7 @@ var juurinyt = function (callback) {
 
 	var output = [];
 
-	url = 'http://www.iltalehti.fi/';
+	url = 'http://paja.tykki.eu/';
 
 	request({uri: url, encoding: null}, function(error, response, html) {
 
@@ -22,8 +22,8 @@ var juurinyt = function (callback) {
 
 			html = iconv.decode(new Buffer(html), "ISO-8859-1");
 			var $ = cheerio.load(html);
-			
-			$( "#tuoreimmat > p:nth-child(2) > a:nth-child(1)" ).each( function() {
+
+			$( ".juurinyt > p > a" ).each( function() {
 				output.push($( this ).text());
 			});
 
