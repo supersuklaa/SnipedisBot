@@ -24,7 +24,7 @@ var juurinyt = function () {
 
 var juurinyt_crawl = function (callback) {
 
-	var output = [];
+	var output = ['eih'];
 
 	url = 'http://www.iltalehti.fi/';
 
