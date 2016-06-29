@@ -15,7 +15,7 @@ var juurinyt = function (callback) {
 
 	url = 'http://www.iltalehti.fi/';
 
-	request(url, function(error, response, html) {
+	request({uri: url, encoding: 'utf-8'}, function(error, response, html) {
 
 		if(!error){
 
