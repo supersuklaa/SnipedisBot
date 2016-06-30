@@ -10,6 +10,7 @@ module.exports = function (msg, cb) {
   }
 
   var usertext = msg.text;
+  var userdate = msg.date;
   var sniptext = '';
 
   usertext = usertext.replace(/@snipedisbot/gi, '');
