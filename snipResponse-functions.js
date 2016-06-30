@@ -26,13 +26,10 @@ var juurinyt = function (callback) {
 			$( ".juurinyt > p > a" ).each( function() {
 				output.push($( this ).text());
 			});
-
-			if (output.length < 1) {
 				
-				$(" #iltab_luetuimmat-kaikki1 > p > a > span:nth-child(2)" ).each( function() {
-					output.push($( this ).text());
-				});
-			}
+			$(" #iltab_luetuimmat-kaikki1 > p > a > span:nth-child(2)" ).each( function() {
+				output.push($( this ).text());
+			});
 
 		}
 
